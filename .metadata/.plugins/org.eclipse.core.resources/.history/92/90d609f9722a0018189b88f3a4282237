@@ -1,0 +1,12 @@
+package view;
+
+import javafx.scene.shape.Rectangle;
+
+public class Square extends Rectangle{
+	public Square(int x, int y){
+		setWidth(Window.SQUARE_SIZE);
+		setHeight(Window.SQUARE_SIZE);
+
+		relocate(x * Window.SQUARE_SIZE, y * Window.SQUARE_SIZE);
+	}
+}
