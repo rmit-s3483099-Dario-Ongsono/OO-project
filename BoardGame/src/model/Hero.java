@@ -18,7 +18,7 @@ public abstract class Hero {
         this.isAlive = false;
         this.isAlive = false;
 
-    }
+    }   
 
     public abstract void specialAbility();
 
