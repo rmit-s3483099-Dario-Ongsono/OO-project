@@ -5,6 +5,7 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import model.TestRole;
 /**
  *
  * @author Yu Liu makes GUI
@@ -16,6 +17,7 @@ public class Window extends Application{
 	public static final int WIDTH = 8;
 	public static final int HEIGHT = 6;
 
+	private Square[][] board = new Square[WIDTH][HEIGHT];
 	private Group squareGroup = new Group();
 	private Group pieceGroup = new Group();
 
@@ -23,16 +25,43 @@ public class Window extends Application{
 		Pane root = new Pane();
 		root.setPrefSize(SQUARE_SIZE * WIDTH, SQUARE_SIZE * HEIGHT);
 
+		TestRole role = null;
+		
+		if(Location.getIndex() == 0){
+			role = makeHero(2, 2);
+		}
+		
 
 		for (int y = 0; y < HEIGHT; y++){
 			for (int x = 0; x < WIDTH; x++){
 				Square square = new Square(x, y);
+				board[x][y] = square;
+				
 				squareGroup.getChildren().add(square);
 			}
 		}
-		root.getChildren().addAll(squareGroup);
+		
+		
+
+		pieceGroup.getChildren().add(role);
+		root.getChildren().addAll(squareGroup, pieceGroup);
 		return root;
 	}
+
+
+	public TestRole makeHero(int x, int y){
+		TestRole hero = new TestRole(x, y);
+		hero.setOnMouseClicked(e->{
+			if(Location.getIndex() != 0){
+				hero.relocate(Location.getNewX(), Location.getNewY());
+				System.out.print("321");
+			}
+		});
+
+
+		return hero;
+	}
+
 
 
 	@Override

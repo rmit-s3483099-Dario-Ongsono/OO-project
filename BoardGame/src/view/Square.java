@@ -2,10 +2,17 @@ package view;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import model.TestRole;
 
 public class Square extends Rectangle{
 	private Piece piece;
-
+	private int newX, newY;
+	private TestRole hero;
+	
+	public void setPiece(TestRole hero){
+		this.hero = hero;
+	}
+	
 	public boolean hasPiece(){
 		return piece != null;
 	}
@@ -16,8 +23,9 @@ public class Square extends Rectangle{
 	public Square(int x, int y){
 		setWidth(Window.SQUARE_SIZE);
 		setHeight(Window.SQUARE_SIZE);
-
-		relocate(x * Window.SQUARE_SIZE, y * Window.SQUARE_SIZE);
+		newX = x * Window.SQUARE_SIZE;
+		newY = y * Window.SQUARE_SIZE;
+		relocate(newX, newY);
 		
 		setFill(Color.valueOf("#feb"));
 		setStroke(Color.valueOf("Black"));
@@ -31,6 +39,7 @@ public class Square extends Rectangle{
 		
 		setOnMouseClicked(e ->{
 			setFill(Color.valueOf("Red"));
+			Location.setNewLocation(newX, newY);
 		});
 	}
 }
