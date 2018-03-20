@@ -27,12 +27,9 @@ public class Window extends Application{
 		for (int y = 0; y < HEIGHT; y++){
 			for (int x = 0; x < WIDTH; x++){
 				Square square = new Square(x, y);
-				squareGroup.getChildren().add(square);
-				
+				squareGroup.getChildren().add(square);				
 			}
-		}
-		
-		
+		}				
 		root.getChildren().addAll(squareGroup);
 		return root;
 	}
