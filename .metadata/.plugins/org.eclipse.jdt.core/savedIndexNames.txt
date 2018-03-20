@@ -13,7 +13,6 @@ INDEX VERSION 1.129+C:\Users\User\Documents\GitHub\Who-cares-project\.metadata\.
 2725125150.index
 2816613229.index
 4062329064.index
-482995358.index
 1924480154.index
 1686655237.index
 1056031855.index
