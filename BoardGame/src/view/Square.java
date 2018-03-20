@@ -28,5 +28,9 @@ public class Square extends Rectangle{
 		setOnMouseExited(e ->{
 			setFill(Color.valueOf("#feb"));
 		});
+		
+		setOnMouseClicked(e ->{
+			setFill(Color.valueOf("Red"));
+		});
 	}
 }
