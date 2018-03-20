@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INDEX VERSION 1.129+E:\Code\Git\Who-cares-project\.metadata\.plugins\org.eclipse.jdt.core
 1056031855.index
 1686655237.index
@@ -16,5 +17,8 @@ INDEX VERSION 1.129+E:\Code\Git\Who-cares-project\.metadata\.plugins\org.eclipse
 4062329064.index
 3608585563.index
 189530877.index
+=======
+INDEX VERSION 1.129+C:\Users\User\Documents\GitHub\Who-cares-project\.metadata\.plugins\org.eclipse.jdt.core
+>>>>>>> 71b20c72965ef700146d2a1d906d64f87d59aa75
 1414767474.index
-4005617011.index
+482995358.index
