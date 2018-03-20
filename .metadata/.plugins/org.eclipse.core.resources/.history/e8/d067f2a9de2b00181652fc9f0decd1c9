@@ -17,6 +17,7 @@ public abstract class Hero {
         this.moveRange = moveRange;
         this.isAlive = false;
         this.isAlive = false;
+
     }
 
     public abstract void specialAbility();
