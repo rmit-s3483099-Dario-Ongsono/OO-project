@@ -1,7 +1,7 @@
 package model;
 
 public abstract class Hero {
-
+//comments
     private String heroID;
     private boolean isAlive;     //set to alive when respawned
     private boolean isSelected; //If hero is selected for the game
