@@ -1,7 +1,11 @@
 {
   "version": "v1",
   "title": "Eclipse",
+<<<<<<< Updated upstream
   "timestamp": 1521511100434,
+=======
+  "timestamp": 1521511678175,
+>>>>>>> Stashed changes
   "ttl": 10080,
   "helpUrl": "https://dev.eclipse.org/recommenders/community/aeri/v2/help/",
   "feedbackUrl": "https://www.codetrails.com/error-analytics/",
@@ -10,6 +14,10 @@
   "maxReportSize": 262144,
   "problemsUrl": "https://www.eclipse.org/downloads/download.php?r\u003d1\u0026file\u003d/technology/epp/logging/problems.zip",
   "problemsTtl": 20160,
+<<<<<<< Updated upstream
+=======
+  "interestUrl": "https://dev.eclipse.org/recommenders/community/confess/v2/interest",
+>>>>>>> Stashed changes
   "connectTimeout": 10,
   "socketTimeout": 10,
   "acceptedProducts": [
@@ -67,5 +75,9 @@
     "org.eclipse.pde.core::The current target platform contains errors*",
     "org.eclipse.ui::Conflicting handlers for*"
   ],
+<<<<<<< Updated upstream
   "problemsZipLastDownloadTimestamp": 1521511426259
+=======
+  "problemsZipLastDownloadTimestamp": 0
+>>>>>>> Stashed changes
 }
