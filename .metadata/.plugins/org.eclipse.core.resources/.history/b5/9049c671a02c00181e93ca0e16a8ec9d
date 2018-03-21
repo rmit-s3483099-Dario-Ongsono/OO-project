@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import model.TestRole;
 /**
@@ -55,10 +54,12 @@ public class Window extends Application{
 	public TestRole makeHero(int x, int y){
 		TestRole hero = new TestRole(x, y);
 
-		hero.setOnMouseClicked(e ->{
-			Location.selectPiece(hero);
-		});
+		for (int j = 0; j < HEIGHT; j++){
+			for (int i = 0; i < WIDTH; i++){
+				if(board[i][j].hasPiece() && board[i][j].getPiece().select())
 
+			}
+		}
 //		hero.setOnMouseClicked(e->{
 //			if(Location.getIndex() != 0){
 //				hero.relocate(Location.getNewX(), Location.getNewY());

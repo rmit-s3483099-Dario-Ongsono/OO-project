@@ -27,7 +27,7 @@ public class TestRole extends HeroTest{
 
 		getChildren().addAll(bg);
 
-		setOnMousePressed(e ->{
+		setOnMouseClicked(e ->{
 			bg.setFill(Color.GREEN);
 		});
 

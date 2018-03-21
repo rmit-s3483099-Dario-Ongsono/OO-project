@@ -39,7 +39,6 @@ public class Square extends Rectangle{
 		setOnMouseClicked(e ->{
 			setFill(Color.valueOf("Red"));
 			Location.setNewLocation(newX, newY);
-			Location.movePiece(newX, newY);
 		});
 	}
 }

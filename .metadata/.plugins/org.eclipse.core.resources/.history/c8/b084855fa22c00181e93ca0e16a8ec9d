@@ -32,12 +32,7 @@ public class Location {
 	public static void selectPiece(TestRole hero){
 		h = hero;
 	}
-	
-	
-	public static void movePiece(int x, int y){
-		h.relocate(x, y);
-	}
-	
+
 	public static TestRole pieceSelected(){
 		return h;
 	}

@@ -15,7 +15,7 @@ public class Square extends Rectangle{
 	public boolean hasPiece(){
 		return hero != null;
 	}
-	public TestRole getPiece(){
+	public Piece getPiece(){
 		return hero;
 	}
 
@@ -39,7 +39,6 @@ public class Square extends Rectangle{
 		setOnMouseClicked(e ->{
 			setFill(Color.valueOf("Red"));
 			Location.setNewLocation(newX, newY);
-			Location.movePiece(newX, newY);
 		});
 	}
 }

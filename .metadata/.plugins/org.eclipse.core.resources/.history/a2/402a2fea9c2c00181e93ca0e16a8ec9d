@@ -5,18 +5,19 @@ import javafx.scene.shape.Rectangle;
 import model.TestRole;
 
 public class Square extends Rectangle{
+	private Piece piece;
 	private int newX, newY;
 	private TestRole hero;
-
+	
 	public void setPiece(TestRole hero){
 		this.hero = hero;
 	}
-
+	
 	public boolean hasPiece(){
-		return hero != null;
+		return piece != null;
 	}
-	public TestRole getPiece(){
-		return hero;
+	public Piece getPiece(){
+		return piece;
 	}
 
 	public Square(int x, int y){
@@ -25,21 +26,20 @@ public class Square extends Rectangle{
 		newX = x * Window.SQUARE_SIZE;
 		newY = y * Window.SQUARE_SIZE;
 		relocate(newX, newY);
-
+		
 		setFill(Color.valueOf("#feb"));
 		setStroke(Color.valueOf("Black"));
-
+		
 		setOnMouseEntered(e ->{
 			setFill(Color.valueOf("White"));
 		});
 		setOnMouseExited(e ->{
 			setFill(Color.valueOf("#feb"));
 		});
-
+		
 		setOnMouseClicked(e ->{
 			setFill(Color.valueOf("Red"));
 			Location.setNewLocation(newX, newY);
-			Location.movePiece(newX, newY);
 		});
 	}
 }
