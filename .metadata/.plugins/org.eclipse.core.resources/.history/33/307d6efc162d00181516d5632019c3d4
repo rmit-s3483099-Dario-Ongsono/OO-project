@@ -59,37 +59,36 @@ public class Window extends Application{
 
 
 	public TestRole makeHero(boolean type, int x, int y){
-		TestRole hero;
+		TestRole hero; 
 		if(type)
 			hero = new TestRole(type ,x, y, countB++);
 		else
 			hero = new TestRole(type ,x, y, countR++);
-
-
-
+		
+		
 		hero.setOnMouseClicked(e ->{
 			if(Location.getTurn() % 2 == 0 && hero.getType()){
 				Location.selectPiece(hero);
-
-
-
-
+				if(hero.getDX() == 1){
+					board[x + hero.getDX()][y].setFill(Color.GREEN);
+					board[x ][y + hero.getDX()].setFill(Color.GREEN);
+					board[x - hero.getDX()][y].setFill(Color.GREEN);
+					board[x ][y - hero.getDX()].setFill(Color.GREEN);
+				}
+				if(hero.getDX() == 2){
+					board[x + hero.getDX()][y+ hero.getDX()].setFill(Color.GREEN);
+					board[x + hero.getDX()][y + hero.getDX()].setFill(Color.GREEN);
+					board[x - hero.getDX()][y- hero.getDX()].setFill(Color.GREEN);
+					board[x - hero.getDX()][y - hero.getDX()].setFill(Color.GREEN);
+				}
+			
+				
 			}else if(Location.getTurn() % 2 != 0 && !hero.getType()){
 				Location.selectPiece(hero);
 			}else{
 				Alarm.display();
 				hero.getBg().setStroke(Color.BLACK);
 			}
-
-			for (int j = 0; j< HEIGHT; j++){
-				for (int i = 0; i < WIDTH; i++){
-					if(x == i - hero.getDX() && y == i -hero.getDX()){
-						System.out.print("ayeys");
-						board[i][j].setFill(Color.GREEN);
-					}
-		        }
-			}
-
 		});
 		return hero;
 	}

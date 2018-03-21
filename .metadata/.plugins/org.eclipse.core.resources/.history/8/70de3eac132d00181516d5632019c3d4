@@ -13,13 +13,10 @@ public class TestRole extends HeroTest{
 	private double oldX, oldY;
 	private Ellipse bg;
 	private boolean heroType;
-	private int dx = 1;
-	public TestRole(boolean type, int x, int y, int d){
+	public TestRole(boolean type, int x, int y){
 
 		move(x, y);
 		heroType = type;
-		dx = d;
-
 		bg = new Ellipse(Window.SQUARE_SIZE * 0.3125, Window.SQUARE_SIZE * 0.26);
 
 		if(type)
@@ -62,9 +59,5 @@ public class TestRole extends HeroTest{
 
 	public Ellipse getBg(){
 		return bg;
-	}
-
-	public int getDX(){
-		return dx;
 	}
 }

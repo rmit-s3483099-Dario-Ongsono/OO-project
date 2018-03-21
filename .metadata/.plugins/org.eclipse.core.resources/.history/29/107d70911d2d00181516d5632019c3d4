@@ -66,13 +66,13 @@ public class Window extends Application{
 			hero = new TestRole(type ,x, y, countR++);
 
 
-
+		
 		hero.setOnMouseClicked(e ->{
 			if(Location.getTurn() % 2 == 0 && hero.getType()){
 				Location.selectPiece(hero);
-
-
-
+				
+	
+				
 
 			}else if(Location.getTurn() % 2 != 0 && !hero.getType()){
 				Location.selectPiece(hero);
@@ -80,7 +80,7 @@ public class Window extends Application{
 				Alarm.display();
 				hero.getBg().setStroke(Color.BLACK);
 			}
-
+			
 			for (int j = 0; j< HEIGHT; j++){
 				for (int i = 0; i < WIDTH; i++){
 					if(x == i - hero.getDX() && y == i -hero.getDX()){
@@ -89,7 +89,7 @@ public class Window extends Application{
 					}
 		        }
 			}
-
+			
 		});
 		return hero;
 	}

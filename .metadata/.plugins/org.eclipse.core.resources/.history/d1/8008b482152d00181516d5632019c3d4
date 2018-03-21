@@ -39,11 +39,11 @@ public class Window extends Application{
 
 				TestRole role = null;
 
-				if(y == 0 && x % 2 == 0 && countB < 4){
+				if(y == 0 && x % 2 == 0 && countB < 3){
 					role = makeHero(true, x, y);
 
 				}
-				else if(y == 5 && x % 2 == 0 && countR < 4){
+				else if(y == 5 && x % 2 == 0 && countR < 3){
 					role = makeHero(false, x, y);
 				}
 
@@ -59,37 +59,25 @@ public class Window extends Application{
 
 
 	public TestRole makeHero(boolean type, int x, int y){
-		TestRole hero;
-		if(type)
-			hero = new TestRole(type ,x, y, countB++);
+		TestRole hero; 
+		if(type){
+			hero = new TestRole(type ,x, y, countB);
+			countB++;
+		}
+			
 		else
 			hero = new TestRole(type ,x, y, countR++);
-
-
-
+		
+		
 		hero.setOnMouseClicked(e ->{
 			if(Location.getTurn() % 2 == 0 && hero.getType()){
 				Location.selectPiece(hero);
-
-
-
-
 			}else if(Location.getTurn() % 2 != 0 && !hero.getType()){
 				Location.selectPiece(hero);
 			}else{
 				Alarm.display();
 				hero.getBg().setStroke(Color.BLACK);
 			}
-
-			for (int j = 0; j< HEIGHT; j++){
-				for (int i = 0; i < WIDTH; i++){
-					if(x == i - hero.getDX() && y == i -hero.getDX()){
-						System.out.print("ayeys");
-						board[i][j].setFill(Color.GREEN);
-					}
-		        }
-			}
-
 		});
 		return hero;
 	}
