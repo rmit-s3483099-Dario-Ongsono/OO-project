@@ -27,46 +27,50 @@ public class Window extends Application{
 		Pane root = new Pane();
 		root.setPrefSize(SQUARE_SIZE * WIDTH, SQUARE_SIZE * HEIGHT);
 
-		TestRole role = null;
+
 
 		for (int y = 0; y < HEIGHT; y++){
 			for (int x = 0; x < WIDTH; x++){
 				Square square = new Square(x, y);
 				board[x][y] = square;
 
-				if(role == null && Location.getIndex() == 0){
-					role = makeHero(x, y);
-					square.setPiece(role);
+				squareGroup.getChildren().add(square);
+
+				TestRole role = null;
+
+				if(y == 0 && x % 2 == 0){
+					role = makeHero(true, x, y);
+
+				}
+				else if(y == 5 && x % 2 == 0){
+					role = makeHero(false, x, y);
 				}
 
-
-				squareGroup.getChildren().add(square);
+				if (role != null) {
+	                   square.setPiece(role);
+	                   pieceGroup.getChildren().add(role);
+	            }
 			}
 		}
-
-
-
-		pieceGroup.getChildren().add(role);
 		root.getChildren().addAll(squareGroup, pieceGroup);
 		return root;
 	}
 
 
-	public TestRole makeHero(int x, int y){
-		TestRole hero = new TestRole(x, y);
+	public TestRole makeHero(boolean type, int x, int y){
+		TestRole hero = new TestRole(type ,x, y);
 
 		hero.setOnMouseClicked(e ->{
-			Location.selectPiece(hero);
+			if(Location.getTurn() % 2 == 0 && hero.getType()){
+				Location.selectPiece(hero);
+			}else if(Location.getTurn() % 2 != 0 && !hero.getType()){
+				Location.selectPiece(hero);
+			}else{
+				Alarm.display();
+				hero.getBg().setStroke(Color.BLACK);
+			}
+				
 		});
-
-//		hero.setOnMouseClicked(e->{
-//			if(Location.getIndex() != 0){
-//				hero.relocate(Location.getNewX(), Location.getNewY());
-//				System.out.print("321");
-//			}
-//		});
-
-
 		return hero;
 	}
 

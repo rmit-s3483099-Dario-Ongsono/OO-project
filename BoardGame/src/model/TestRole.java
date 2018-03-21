@@ -11,13 +11,19 @@ import view.Window;
 public class TestRole extends HeroTest{
 	private double newX, newY;
 	private double oldX, oldY;
-
-	public TestRole(int x, int y){
+	private Ellipse bg;
+	private boolean heroType;
+	public TestRole(boolean type, int x, int y){
 
 		move(x, y);
+		heroType = type;
+		bg = new Ellipse(Window.SQUARE_SIZE * 0.3125, Window.SQUARE_SIZE * 0.26);
 
-		Ellipse bg = new Ellipse(Window.SQUARE_SIZE * 0.3125, Window.SQUARE_SIZE * 0.26);
-		bg.setFill(Color.BLACK);
+		if(type)
+			bg.setFill(Color.BLUE);
+		else
+			bg.setFill(Color.RED);
+
 
 		bg.setStroke(Color.BLACK);
 		bg.setStrokeWidth(Window.SQUARE_SIZE * 0.03);
@@ -28,11 +34,8 @@ public class TestRole extends HeroTest{
 		getChildren().addAll(bg);
 
 		setOnMousePressed(e ->{
-			bg.setFill(Color.GREEN);
+			bg.setStroke(Color.WHITE);
 		});
-
-
-
 	}
 
 	@Override
@@ -47,5 +50,14 @@ public class TestRole extends HeroTest{
 	public void abortMove() {
 
 
+	}
+
+	public boolean getType(){
+		return heroType;
+	}
+
+
+	public Ellipse getBg(){
+		return bg;
 	}
 }
