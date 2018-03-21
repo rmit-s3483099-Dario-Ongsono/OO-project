@@ -1,6 +1,7 @@
 package model;
 
 public abstract class Hero {
+
 //comments hero
     private String heroID;
     private boolean isAlive;     //set to alive when respawned
@@ -23,14 +24,13 @@ public abstract class Hero {
 
     public abstract void move(int moveRange, int currPosX, int currPosY, int endX, int endY);
 
-    public abstract void capture(Hero hero, attackRange);
+    public abstract void capture(Hero hero, int attackRange);
 
 
     //Getters & Setters
     public int getAttackRange() {
         return attackRange;
     }
-
 
     public void setAttackRange(int attackRange) {
         this.attackRange = attackRange;
