@@ -1,0 +1,20 @@
+package model;
+import javafx.scene.layout.*;
+
+public abstract class HeroTest extends StackPane{
+
+	  private double mouseX, mouseY;
+	  private double oldX, oldY;
+
+	  public abstract void move();
+	  public abstract void abortMove();
+
+
+	  public double getOldX() {
+	        return oldX;
+	  }
+
+	  public double getOldY() {
+	        return oldY;
+	  }
+}

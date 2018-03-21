@@ -1,0 +1,38 @@
+package view;
+
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+
+public class Square extends Rectangle{
+	private Piece piece;
+	private int newX, newY;
+	public boolean hasPiece(){
+		return piece != null;
+	}
+	public Piece getPiece(){
+		return piece;
+	}
+
+	public Square(int x, int y){
+		setWidth(Window.SQUARE_SIZE);
+		setHeight(Window.SQUARE_SIZE);
+		newX = x * Window.SQUARE_SIZE;
+		newY = y * Window.SQUARE_SIZE;
+		relocate(newX, newY);
+		
+		setFill(Color.valueOf("#feb"));
+		setStroke(Color.valueOf("Black"));
+		
+		setOnMouseEntered(e ->{
+			setFill(Color.valueOf("White"));
+		});
+		setOnMouseExited(e ->{
+			setFill(Color.valueOf("#feb"));
+		});
+		
+		setOnMouseClicked(e ->{
+			setFill(Color.valueOf("Red"));
+			Location.setNewLocation(newX, newY);
+		});
+	}
+}
