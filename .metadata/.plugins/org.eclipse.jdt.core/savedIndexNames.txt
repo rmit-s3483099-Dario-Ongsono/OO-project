@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 INDEX VERSION 1.129+C:\Users\dario\OneDrive\Documents\GitHub\OOAssignment1\Who-cares-project\.metadata\.plugins\org.eclipse.jdt.core
 3808123788.index
 4232500288.index
@@ -15,4 +16,48 @@ INDEX VERSION 1.129+C:\Users\dario\OneDrive\Documents\GitHub\OOAssignment1\Who-c
 421022922.index
 1055679481.index
 1580166048.index
+<<<<<<< Updated upstream
 1414767474.index
+=======
+1860642593.index
+482995358.index
+4232500288.index
+=======
+INDEX VERSION 1.129+/Users/KBOY/Desktop/Who-cares-project/.metadata/.plugins/org.eclipse.jdt.core
+2763200912.index
+28824069.index
+1847448136.index
+204893112.index
+191371263.index
+2954216888.index
+1044104405.index
+3082362883.index
+4160434985.index
+995153890.index
+3404917195.index
+2117113611.index
+3227702110.index
+3157663476.index
+527849843.index
+44207926.index
+299107005.index
+3627163701.index
+4152864145.index
+2979435446.index
+57265586.index
+3252782416.index
+616739193.index
+1979115784.index
+1862356885.index
+2932191785.index
+1931402068.index
+865310592.index
+1431002418.index
+1271342938.index
+2465022724.index
+576073405.index
+624708564.index
+3358580009.index
+4187124118.index
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes

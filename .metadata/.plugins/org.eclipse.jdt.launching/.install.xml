@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <dirs>
+<<<<<<< Updated upstream
 <entry loc="C:\Program Files\Java\jre1.8.0_144" stamp="1505921426322"/>
 <entry loc="C:\Program Files\Java\jre1.8.0_161" stamp="1521423650421"/>
+=======
+<<<<<<< Updated upstream
+<entry loc="C:\Program Files\Java\jre1.8.0_144" stamp="1504941839174"/>
+=======
+<entry loc="/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home" stamp="1513730643000"/>
+<entry loc="C:\Program Files\Java\jre1.8.0_144" stamp="1505921426322"/>
+<entry loc="C:\Program Files\Java\jre1.8.0_161" stamp="1521423650421"/>
+<entry loc="/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home" stamp="1466589359000"/>
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 </dirs>
