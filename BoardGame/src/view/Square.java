@@ -1,5 +1,6 @@
 package view;
 
+import controller.Location;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import model.TestRole;

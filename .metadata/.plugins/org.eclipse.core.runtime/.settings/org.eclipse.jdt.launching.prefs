@@ -2,8 +2,4 @@
 <<<<<<<=Updated upstream
 >>>>>>>=19652723261a23a4d25656d82aa300d59b7e27db
 eclipse.preferences.version=1
-<<<<<<< HEAD
-org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1521726899017" defaultVMConnector\="">\r\n<vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n<vm id\="1521633829615" name\="jdk" path\="C\:\\Program Files\\Java\\jdk"/>\r\n<vm id\="1521726899017" javadocURL\="https\://docs.oracle.com/javase/8/docs/api/" name\="jre1.8.0_144" path\="C\:\\Program Files\\Java\\jre1.8.0_144"/>\r\n</vmType>\r\n</vmSettings>\r\n
-=======
-org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1521675429219" defaultVMConnector\="">\r\n<vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n<vm id\="1521633829615" name\="jdk" path\="C\:\\Program Files\\Java\\jdk"/>\r\n<vm id\="1521675429219" javadocURL\="https\://docs.oracle.com/javase/8/docs/api/" name\="jre1.8.0_161" path\="C\:\\Program Files\\Java\\jre1.8.0_161"/>\r\n</vmType>\r\n</vmSettings>\r\n
->>>>>>> 150c1aa87e916dc39f2bd06b81617dc4cb6cf103
+org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1521726899017" defaultVMConnector\="">\r\n<vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n<vm id\="1521726899017" name\="jre1.8.0_144" path\="C\:\\Program Files\\Java\\jre1.8.0_144"/>\r\n</vmType>\r\n</vmSettings>\r\n
