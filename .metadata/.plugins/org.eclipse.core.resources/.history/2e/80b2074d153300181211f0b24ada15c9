@@ -14,7 +14,7 @@ public class TestRole extends HeroTest{
 	private Ellipse bg;
 	private boolean heroType;
 	private int dx = 1;
-	private String pieceType;
+	private int pieceType;
 
 	public TestRole(boolean type, int x, int y, int d){
 
@@ -70,7 +70,7 @@ public class TestRole extends HeroTest{
 		return dx;
 	}
 
-	public String getPieceType(){
+	public int getPieceType(){
 		return pieceType;
 	}
 

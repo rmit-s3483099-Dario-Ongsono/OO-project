@@ -1,0 +1,20 @@
+package controller;
+
+import model.TestRole;
+
+/*
+ * same design logic with Location.java
+ *
+ * function of class:
+ * 1) highlight squares that pieces can move to
+ * 2) move pieces to a selected square
+ * 3)
+ */
+public class Move{
+	private TestRole roleSelected;
+
+
+
+
+
+}
