@@ -9,8 +9,8 @@ import view.Window;
 
 
 public class TestRole extends HeroTest{
-	private int x, y;
-	private int oldX, oldY;
+	private double x, y;
+	private double oldX, oldY;
 	private Ellipse bg;
 	private boolean heroType;
 	private int dx = 1; //testing sample for indicating type of piece. change it to real type late
@@ -70,11 +70,11 @@ public class TestRole extends HeroTest{
 		return dx;
 	}
 
-	public int getX() {
+	public double getX() {
 		return x;
 	}
 
-	public int getY() {
+	public double getY() {
 		return y;
 	}
 

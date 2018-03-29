@@ -17,10 +17,10 @@ import view.Square;
  *
  */
 public class Move{
-	private static TestRole roleSelected;
-	private static Square[][] moveBoard;
+	private TestRole roleSelected;
+	private Square[][] moveBoard;
 
-	public static void detectValidSquare(TestRole hero, Square[][] board){
+	public void detectValidSquare(TestRole hero, Square[][] board){
 		roleSelected  = hero;
 		moveBoard = board;
 		int x = hero.getX();
@@ -28,13 +28,13 @@ public class Move{
 
 		switch(hero.getDX()){
 		case 1:
-
-			break;
-		case 2:
 			board[x-1][y].setFill(Color.GREEN);
 			board[x+1][y].setFill(Color.GREEN);
 			board[x][y-1].setFill(Color.GREEN);
-			board[x][y+1].setFill(Color.GREEN);
+			board[x][y+1]].setFill(Color.GREEN);
+			break;
+		case 2:
+
 			break;
 		}
 

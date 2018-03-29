@@ -1,7 +1,6 @@
 package view;
 
 import controller.Location;
-import controller.Move;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -80,8 +79,16 @@ public class Window extends Application{
 				Alarm.display();
 				hero.getBg().setStroke(Color.BLACK);
 			}
-			
-			Move.detectValidSquare(hero, board);
+
+//**********************Non-implement function of move range for different pieces
+			for (int j = 0; j< HEIGHT; j++){
+				for (int i = 0; i < WIDTH; i++){
+					if(x == i - hero.getDX() && y == i -hero.getDX()){
+						board[i][j].setFill(Color.GREEN);
+					}
+		        }
+			}
+//**********************************************************
 		});
 
 

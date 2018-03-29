@@ -28,13 +28,13 @@ public class Move{
 
 		switch(hero.getDX()){
 		case 1:
-
-			break;
-		case 2:
 			board[x-1][y].setFill(Color.GREEN);
 			board[x+1][y].setFill(Color.GREEN);
 			board[x][y-1].setFill(Color.GREEN);
 			board[x][y+1].setFill(Color.GREEN);
+			break;
+		case 2:
+
 			break;
 		}
 

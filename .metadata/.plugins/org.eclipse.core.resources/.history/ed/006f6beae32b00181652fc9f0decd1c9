@@ -1,6 +1,0 @@
-package model;
-import javafx.scene.layout.*;
-
-public abstract class HeroTest extends StackPane{
-
-}
