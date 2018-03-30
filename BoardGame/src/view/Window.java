@@ -74,17 +74,16 @@ public class Window extends Application{
 			//turns switch, red first
 			if(Location.getTurn() % 2 == 0 && hero.getType()){
 				Location.selectPiece(hero);
+				Move.detectValidSquare(hero, board);
 			}else if(Location.getTurn() % 2 != 0 && !hero.getType()){
 				Location.selectPiece(hero);
+				Move.detectValidSquare(hero, board);
 			}else{
 				Alarm.display();
 				hero.getBg().setStroke(Color.BLACK);
 			}
-			
-			Move.detectValidSquare(hero, board);
+
 		});
-
-
 		return hero;
 	}
 
