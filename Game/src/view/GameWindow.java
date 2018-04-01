@@ -8,8 +8,9 @@ public class GameWindow extends Application{
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		Board game = new Board();
 
-		Scene scene = new Scene();
+		Scene scene = new Scene(game.displayBoard());
 		primaryStage.setTitle("Panda Game");
 		primaryStage.setScene(scene);
 		primaryStage.show();
