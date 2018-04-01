@@ -1,0 +1,75 @@
+package controller;
+
+import javafx.scene.paint.Color;
+import model.TestRole;
+import view.Square;
+import view.Window;
+
+/*
+ * same design logic with Location.java
+ *
+ * function of class:
+ * 1) highlight squares that pieces can move to
+ * 2) move pieces to a selected square
+ * 3) deny a move when a selected piece cannot move to
+ *
+ * late function:
+ * 1) remove a piece from the board
+ *
+ */
+public class Move{
+	private static TestRole roleSelected;
+	private static Square[][] moveBoard;
+
+	public static void detectValidSquare(TestRole hero, Square[][] board){
+		roleSelected  = hero;
+		moveBoard = board;
+		int x = hero.getX();
+		int y = hero.getY();
+
+		switch(hero.getDX()){
+		case 1:
+			if(x-1 >= 0)
+				board[x-1][y].setFill(Color.GREEN);
+			
+			if(x + 1 <= Window.WIDTH)
+				board[x+1][y].setFill(Color.GREEN);
+			
+			if(y - 1 >= 0)
+				board[x][y-1].setFill(Color.GREEN);
+			
+			if(y + 1 <= Window.HEIGHT)
+				board[x][y+1].setFill(Color.GREEN);
+
+			break;
+		case 2:
+			if(board[x-2][y].isExisted())
+				board[x-2][y].setFill(Color.GREEN);
+			
+			if(board[x+2][y].isExisted())
+				board[x+2][y].setFill(Color.GREEN);
+			
+			if(board[x][y-2].isExisted())
+				board[x][y-2].setFill(Color.GREEN);
+			
+			if(board[x][y+2].isExisted())
+				board[x][y+2].setFill(Color.GREEN);
+			break;
+		case 3:
+			if(board[x-1][y-1].isExisted())
+				board[x-1][y-1].setFill(Color.GREEN);
+			
+			if(board[x+1][y+1].isExisted())
+				board[x+1][y+1].setFill(Color.GREEN);
+			
+			if(board[x+1][y-1].isExisted())
+				board[x+1][y-1].setFill(Color.GREEN);
+			
+			if(board[x-1][y+1].isExisted())
+				board[x-1][y+1].setFill(Color.GREEN);
+			break;
+		}
+
+
+	}
+}
