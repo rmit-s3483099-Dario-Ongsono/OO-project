@@ -6,7 +6,7 @@ import view.Board;
 
 public class Tile extends Rectangle {
 	private int newX, newY;
-	private Role hero = null;
+	private Role role = null;
 
 	public Tile(int x, int y){
 		super(Board.TILE_SIZE, Board.TILE_SIZE);
@@ -22,15 +22,15 @@ public class Tile extends Rectangle {
 		setStroke(Color.BLACK);
 	}
 
-	public void putHero(Role r){
-		this.hero = r;
+	public void putRole(Role r){
+		this.role = r;
 	}
 
-	public boolean hasHero(){
-		return hero != null;
+	public boolean hasRole(){
+		return role != null;
 	}
 
-	public void heroLeave(){
-		this.hero = null;
+	public void roleAway(){
+		this.role = null;
 	}
 }

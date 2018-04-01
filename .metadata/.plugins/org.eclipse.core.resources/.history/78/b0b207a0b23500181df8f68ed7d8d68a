@@ -7,9 +7,7 @@ import view.Board;
 public class GameInitial {
 
 	private Group tileGroup = new Group();
-	private Group heroGroup = new Group();
-
-	private Tile[][] tileArray = new Tile[Board.WIDTH][Board.HEIGHT];
+	private Group roleGroup = new Group();
 
 	public Group tileInitialize(){
 		for(int y = 0 ; y < Board.HEIGHT; y++){
@@ -21,11 +19,8 @@ public class GameInitial {
 		return tileGroup;
 	}
 
-	public Group heroInitialize(){
+	public Group roleInitialize(){
 
-		return heroGroup;
+		return roleGroup;
 	}
-
-
-
 }
