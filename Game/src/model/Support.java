@@ -16,7 +16,7 @@ public class Support extends Role implements Revive{
 	}
 
 	@Override
-	public void move() {
+	public void move(int x, int y) {
 		// TODO Auto-generated method stub
 
 	}

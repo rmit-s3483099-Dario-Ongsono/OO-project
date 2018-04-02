@@ -14,7 +14,7 @@ public class Gunner extends Role implements Capture{
 	}
 
 	@Override
-	public void move(int x, int y) {
+	public void move() {
 		// TODO Auto-generated method stub
 
 	}

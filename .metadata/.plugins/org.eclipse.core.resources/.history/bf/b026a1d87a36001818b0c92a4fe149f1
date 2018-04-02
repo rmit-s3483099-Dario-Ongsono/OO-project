@@ -1,0 +1,11 @@
+package model;
+
+public enum RoleType {
+	WARRIOR, SUPPORT, GUNNER;
+
+//	final int moveDir;
+//	RoleType(int moveDir){
+//		this.moveDir = moveDir;
+//	}
+
+}

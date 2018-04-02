@@ -35,10 +35,6 @@ public class GameInitial {
 		return heroGroup;
 	}
 
-	public Tile[][] getTileArray(){
-		return tileArray;
-	}
-
 
 
 }

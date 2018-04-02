@@ -32,11 +32,11 @@ public class GameInitial {
 
 			heroGroup.getChildren().add(hero);
 		}
-		return heroGroup;
-	}
 
-	public Tile[][] getTileArray(){
-		return tileArray;
+
+
+
+		return heroGroup;
 	}
 
 

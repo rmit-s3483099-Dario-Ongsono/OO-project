@@ -37,23 +37,4 @@ public abstract class Role extends StackPane implements Move{
 	public RoleType getRole(){
 		return role;
 	}
-
-	public int getInitX() {
-		return initX;
-	}
-
-	public void setInitX(int x) {
-
-		this.initX = x * Board.TILE_SIZE;
-	}
-
-	public int getInitY() {
-		return initY;
-	}
-
-	public void setInitY(int y) {
-		this.initY = y * Board.TILE_SIZE;
-	}
-
-
 }
