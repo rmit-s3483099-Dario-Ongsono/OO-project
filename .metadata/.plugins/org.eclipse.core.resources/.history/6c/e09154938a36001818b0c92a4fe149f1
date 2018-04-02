@@ -19,7 +19,7 @@ public class Warrior extends Role implements Capture{
 	public void move(int x, int y) {
 		super.setInitX(x);
 		super.setInitY(y);
-		relocate(super.getInitX() * Board.TILE_SIZE, super.getInitY() * Board.TILE_SIZE);
+		relocate(super.getInitX(), super.getInitY());
 	}
 
 	@Override

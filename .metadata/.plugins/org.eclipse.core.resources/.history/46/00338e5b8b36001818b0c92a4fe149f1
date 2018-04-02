@@ -7,13 +7,12 @@ import view.Board;
 public class Tile extends Rectangle {
 	private int newX, newY;
 	private Role hero = null;
-	private boolean ready;
 
 	public Tile(int x, int y){
 		super(Board.TILE_SIZE, Board.TILE_SIZE);
 		newX = x * Board.TILE_SIZE;
 		newY = y * Board.TILE_SIZE;
-		this.ready = false;
+
 		createTile();
 	}
 
@@ -33,13 +32,5 @@ public class Tile extends Rectangle {
 
 	public void heroLeave(){
 		this.hero = null;
-	}
-
-	public void setReady(boolean ready){
-		this.ready = ready;
-	}
-
-	public boolean isReady(){
-		return ready;
 	}
 }

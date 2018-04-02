@@ -14,10 +14,10 @@ public abstract class Role extends StackPane implements Move{
 		this.role = r;
 		this.select = false;
 
-		this.initX = x;
-		this.initY = y;
+		this.initX = x * Board.TILE_SIZE;
+		this.initY = y * Board.TILE_SIZE;
 
-		relocate(initX * Board.TILE_SIZE, initY * Board.TILE_SIZE);
+		relocate(initX, initY);
 	}
 
 	public abstract void drawShape(PlayerType p);
@@ -44,7 +44,7 @@ public abstract class Role extends StackPane implements Move{
 
 	public void setInitX(int x) {
 
-		this.initX = x;
+		this.initX = x * Board.TILE_SIZE;
 	}
 
 	public int getInitY() {
@@ -52,7 +52,7 @@ public abstract class Role extends StackPane implements Move{
 	}
 
 	public void setInitY(int y) {
-		this.initY = y;
+		this.initY = y * Board.TILE_SIZE;
 	}
 
 
