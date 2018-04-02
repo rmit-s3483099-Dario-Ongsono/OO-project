@@ -1,0 +1,25 @@
+package model;
+
+import javafx.scene.layout.StackPane;
+import view.Board;
+
+public abstract class Role extends StackPane implements Move{
+	private PlayerType player;
+	private RoleType role;
+	private int initX, initY;
+	public Role(PlayerType p, RoleType r, int x, int y){
+		this.player = p;
+		this.role = r;
+
+		this.initX = x * Board.TILE_SIZE;
+		this.initY = y * Board.TILE_SIZE;
+
+		relocate(initX, initY);
+
+		drawShape();
+	}
+
+	public abstract void drawShape();
+
+
+}
