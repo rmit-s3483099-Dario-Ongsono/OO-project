@@ -15,7 +15,7 @@ public class Board {
 
 		GameInitial game = new GameInitial();
 
-		gameBoard.getChildren().addAll(game.tileInitialize());
+		gameBoard.getChildren().addAll(game.tileInitialize(),game.heroInitialize());
 		return gameBoard;
 	}
 

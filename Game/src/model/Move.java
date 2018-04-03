@@ -1,5 +1,5 @@
 package model;
 
 public interface Move {
-	public abstract void move();
+	void move(int x, int y);
 }
