@@ -31,7 +31,6 @@ public class MoveDetector {
 			heroSelected.setInitX(x);
 			heroSelected.setInitY(y);
 			heroSelected.move(x, y);
-			tileClean();
 		}
 	}
 

@@ -31,18 +31,10 @@ public class MoveDetector {
 			heroSelected.setInitX(x);
 			heroSelected.setInitY(y);
 			heroSelected.move(x, y);
-			tileClean();
 		}
 	}
 
-	public void tileClean(){
-		for(int i = 0; i < tile.length; i++){
-			for(int j = 0; j < tile.length; j++){
-				tile[i][j].setReady(false);
-				tile[i][j].setFill(Color.valueOf("#feb"));
-			}
-		}
-	}
+
 
 	private void showDiagonalLine(int x, int y, int d) {
 

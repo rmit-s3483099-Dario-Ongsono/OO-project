@@ -15,13 +15,6 @@ public class Tile extends Rectangle {
 		newY = y * Board.TILE_SIZE;
 		this.ready = false;
 		createTile();
-		eventAction();
-	}
-
-	public void eventAction(){
-		setOnMouseClicked(e->{
-			//TODO
-		});
 	}
 
 	public void createTile(){

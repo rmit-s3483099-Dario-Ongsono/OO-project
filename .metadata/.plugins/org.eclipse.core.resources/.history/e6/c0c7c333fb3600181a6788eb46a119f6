@@ -1,6 +1,5 @@
 package view;
 
-import controller.Driver;
 import controller.GameInitial;
 import javafx.scene.layout.Pane;
 
@@ -14,9 +13,9 @@ public class Board {
 		Pane gameBoard = new Pane();
 		gameBoard.setPrefSize(TILE_SIZE * WIDTH, TILE_SIZE * HEIGHT);
 
+		GameInitial game = new GameInitial();
 
-
-		gameBoard.getChildren().addAll(Driver.getGame().tileInitialize(),Driver.getGame().heroInitialize());
+		gameBoard.getChildren().addAll(game.tileInitialize(),game.heroInitialize());
 		return gameBoard;
 	}
 

@@ -16,16 +16,9 @@ public abstract class Role extends StackPane implements Move{
 
 		this.initX = x;
 		this.initY = y;
-		eventAction();
+
 		relocate(initX * Board.TILE_SIZE, initY * Board.TILE_SIZE);
 	}
-
-	public void eventAction(){
-		setOnMouseClicked(e ->{
-			// TODO
-		});
-	}
-
 
 	public abstract void drawShape(PlayerType p);
 
