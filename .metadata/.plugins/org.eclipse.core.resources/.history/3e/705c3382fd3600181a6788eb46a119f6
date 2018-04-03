@@ -20,7 +20,7 @@ public abstract class Role extends StackPane implements Move{
 		relocate(initX * Board.TILE_SIZE, initY * Board.TILE_SIZE);
 	}
 
-	private void eventAction(){
+	public void eventAction(){
 		setOnMouseClicked(e ->{
 			// TODO
 		});
