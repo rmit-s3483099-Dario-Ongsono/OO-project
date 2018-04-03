@@ -23,15 +23,14 @@ public abstract class Role extends StackPane implements Move{
 	private void eventAction(){
 		setOnMouseClicked(e ->{
 			// TODO
-			selected(true);
 		});
 	}
 
 
 	public abstract void drawShape(PlayerType p);
 
-	public void selected(boolean s){
-		select = s;
+	public void selected(){
+		select = true;
 	}
 
 	public boolean isSelected(){
