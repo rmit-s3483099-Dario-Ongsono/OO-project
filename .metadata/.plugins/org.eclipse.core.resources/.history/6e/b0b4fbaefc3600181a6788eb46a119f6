@@ -30,9 +30,6 @@ public class GameInitial {
 		for(int x = 0; x < Board.WIDTH; x ++){
 			Role hero = new Warrior(PlayerType.RED, RoleType.WARRIOR, 4, 2);
 
-			//TODO
-
-
 			heroGroup.getChildren().add(hero);
 		}
 		return heroGroup;
