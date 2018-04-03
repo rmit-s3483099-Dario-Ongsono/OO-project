@@ -17,13 +17,13 @@ public abstract class Role extends StackPane implements Move{
 		this.initX = x;
 		this.initY = y;
 		eventAction();
-
+		relocate(initX * Board.TILE_SIZE, initY * Board.TILE_SIZE);
 	}
 
 	private void eventAction(){
-		setOnMousePressed(e ->{
+		setOnMouseClicked(e ->{
 			// TODO
-
+			System.out.print("click 1");
 			selected(true);
 		});
 	}

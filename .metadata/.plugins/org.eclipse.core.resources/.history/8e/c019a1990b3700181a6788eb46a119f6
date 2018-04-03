@@ -8,12 +8,9 @@ public class Tile extends Rectangle {
 	private int newX, newY;
 	private Role hero = null;
 	private boolean ready;
-	private int tileX, tileY;
 
 	public Tile(int x, int y){
 		super(Board.TILE_SIZE, Board.TILE_SIZE);
-		this.tileX = x;
-		this.tileY = y;
 		newX = x * Board.TILE_SIZE;
 		newY = y * Board.TILE_SIZE;
 		this.ready = false;
@@ -33,7 +30,7 @@ public class Tile extends Rectangle {
 		setStroke(Color.BLACK);
 	}
 
-	public void heroIn(Role r){
+	public void putHero(Role r){
 		this.hero = r;
 	}
 
@@ -41,7 +38,7 @@ public class Tile extends Rectangle {
 		return hero != null;
 	}
 
-	public void heroOut(){
+	public void heroLeave(){
 		this.hero = null;
 	}
 
@@ -52,16 +49,4 @@ public class Tile extends Rectangle {
 	public boolean isReady(){
 		return ready;
 	}
-
-	public int getTileX() {
-		return tileX;
-	}
-
-	public int getTileY() {
-		return tileY;
-	}
-
-
-
-
 }

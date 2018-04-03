@@ -23,7 +23,7 @@ public abstract class Role extends StackPane implements Move{
 	private void eventAction(){
 		setOnMousePressed(e ->{
 			// TODO
-
+			System.out.print("click 1");
 			selected(true);
 		});
 	}

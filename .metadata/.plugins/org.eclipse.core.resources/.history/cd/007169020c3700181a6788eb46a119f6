@@ -16,16 +16,10 @@ public class TileDetector extends Detector{
 		int y = super.getRoleSelected().getInitY();
 		int smove = super.getRoleSelected().getRole().SMOVE;
 		int dmove = super.getRoleSelected().getRole().DMOVE;
-
+		
 		if(super.getTile()[x][y].hasHero()){
 			showStraightLine(x, y, smove);
 			showDiagonalLine(x, y, dmove);
-		}
-	}
-
-	public void moveTo(int x, int y){
-		if(super.getTile()[x][y].isReady()){
-			super.getRoleSelected().move(x, y);
 		}
 	}
 

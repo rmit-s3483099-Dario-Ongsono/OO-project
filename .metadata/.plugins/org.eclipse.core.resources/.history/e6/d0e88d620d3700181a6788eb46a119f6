@@ -11,7 +11,7 @@ public class Warrior extends Role implements Capture{
 
 	public Warrior(PlayerType p, RoleType r, int x, int y) {
 		super(p, r, x, y);
-		move(x,y);
+
 		drawShape(p);
 	}
 
@@ -20,7 +20,6 @@ public class Warrior extends Role implements Capture{
 		super.setInitX(x);
 		super.setInitY(y);
 		relocate(super.getInitX() * Board.TILE_SIZE, super.getInitY() * Board.TILE_SIZE);
-
 	}
 
 	@Override

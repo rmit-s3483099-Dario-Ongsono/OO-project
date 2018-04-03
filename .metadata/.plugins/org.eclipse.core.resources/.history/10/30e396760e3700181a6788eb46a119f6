@@ -34,12 +34,12 @@ public class GameInitial {
 
 	public Group heroInitialize(){
 
-
+		for(int x = 0; x < Board.WIDTH; x ++){
 			Role hero = new Warrior(PlayerType.RED, RoleType.WARRIOR, 4, 2);
 			//TOD
 			// set on action here;
 			hero.setOnMouseClicked(e ->{
-
+				System.out.print("click 2");
 				detector = new TileDetector(hero, getTileArray());
 				((TileDetector) detector).validTile();
 
@@ -49,7 +49,7 @@ public class GameInitial {
 
 
 			heroGroup.getChildren().add(hero);
-
+		}
 		return heroGroup;
 	}
 

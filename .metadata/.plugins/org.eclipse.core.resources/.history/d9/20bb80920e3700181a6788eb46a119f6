@@ -39,7 +39,7 @@ public class GameInitial {
 			//TOD
 			// set on action here;
 			hero.setOnMouseClicked(e ->{
-
+				System.out.print("click 2");
 				detector = new TileDetector(hero, getTileArray());
 				((TileDetector) detector).validTile();
 

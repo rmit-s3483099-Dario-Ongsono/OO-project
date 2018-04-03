@@ -25,6 +25,8 @@ public class TileDetector extends Detector{
 
 	public void moveTo(int x, int y){
 		if(super.getTile()[x][y].isReady()){
+			super.getRoleSelected().setInitX(x);
+			super.getRoleSelected().setInitY(y);
 			super.getRoleSelected().move(x, y);
 		}
 	}

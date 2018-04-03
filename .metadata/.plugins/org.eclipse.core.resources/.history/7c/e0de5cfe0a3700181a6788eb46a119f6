@@ -23,12 +23,6 @@ public class TileDetector extends Detector{
 		}
 	}
 
-	public void moveTo(int x, int y){
-		if(super.getTile()[x][y].isReady()){
-			super.getRoleSelected().move(x, y);
-		}
-	}
-
 	public void tileClean(){
 		for(int i = 0; i < super.getTile().length; i++){
 			for(int j = 0; j < super.getTile().length; j++){
