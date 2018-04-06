@@ -11,7 +11,6 @@
 <fullyQualifiedTypeName name="view.Square"/>
 <fullyQualifiedTypeName name="view.Window"/>
 <fullyQualifiedTypeName name="controller.Move"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="javafx.application.Application"/>
 <fullyQualifiedTypeName name="javafx.scene.layout.StackPane"/>
 <fullyQualifiedTypeName name="javafx.scene.layout.Pane"/>
@@ -26,7 +25,9 @@
 <fullyQualifiedTypeName name="javafx.scene.shape.Rectangle"/>
 <fullyQualifiedTypeName name="javafx.scene.shape.Shape"/>
 <fullyQualifiedTypeName name="model.Tile"/>
-<fullyQualifiedTypeName name="model.Role"/>
 <fullyQualifiedTypeName name="javafx.scene.paint.Color"/>
 <fullyQualifiedTypeName name="view.Board"/>
+<fullyQualifiedTypeName name="controller.Driver"/>
+<fullyQualifiedTypeName name="model.Role"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>
