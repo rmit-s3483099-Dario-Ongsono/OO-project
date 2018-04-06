@@ -1,0 +1,19 @@
+package gameView;
+
+import javafx.scene.layout.Pane;
+
+public class Board {
+
+	public Pane displayBoard(int tilesize, int width, int height){
+		Pane gameBoard = new Pane();
+		gameBoard.setPrefSize(tilesize * width, tilesize * height);
+
+
+		gameBoard.getChildren().addAll();
+		return gameBoard;
+	}
+
+
+
+
+}

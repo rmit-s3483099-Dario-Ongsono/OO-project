@@ -1,0 +1,21 @@
+package gameController;
+
+public class Controller {
+	private final int tile_Size = 50;
+	private final int board_Width = 12;
+	private final int board_Height = 14;
+
+
+	public Controller(){
+		
+	}
+
+
+
+
+
+
+
+
+
+}

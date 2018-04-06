@@ -1,0 +1,15 @@
+package gameView;
+
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+
+public class GameFrame extends Stage{
+	
+	public GameFrame(){
+		Scene scene = new Scene();
+		this.setTitle("Panda Game");
+		this.setScene(scene);
+		this.show();
+	}
+}
