@@ -3,9 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BoardGame/BoardGame.iml" filepath="$PROJECT_DIR$/BoardGame/BoardGame.iml" />
-      <module fileurl="file://$PROJECT_DIR$/NewProject/NewProject.iml" filepath="$PROJECT_DIR$/NewProject/NewProject.iml" />
-      <module fileurl="file://$PROJECT_DIR$/RemoteSystemsTempFiles/RemoteSystemsTempFiles.iml" filepath="$PROJECT_DIR$/RemoteSystemsTempFiles/RemoteSystemsTempFiles.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Game/Game.iml" filepath="$PROJECT_DIR$/Game/Game.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MVC Game/MVC Game.iml" filepath="$PROJECT_DIR$/MVC Game/MVC Game.iml" />
       <module fileurl="file://$PROJECT_DIR$/Who-cares-project(1).iml" filepath="$PROJECT_DIR$/Who-cares-project(1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/MVC Game/src/src.iml" filepath="$PROJECT_DIR$/MVC Game/src/src.iml" />
     </modules>
   </component>
 </project>

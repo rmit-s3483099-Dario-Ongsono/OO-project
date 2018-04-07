@@ -6,10 +6,12 @@ import gameModel.*;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Ellipse;
+import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Shape;
 
 public class HeroView extends StackPane{
 	private Shape shape;
+	private Polygon triangle;
 	private Hero hero;
 
 	public HeroView(int x, int y, PlayerType p, RoleType r){
@@ -32,6 +34,12 @@ public class HeroView extends StackPane{
 		shape.setTranslateY((Controller.TILE_SIZE - Controller.TILE_SIZE * 0.26 * 2) / 2 + Controller.TILE_SIZE * 0.07);
 		getChildren().addAll(shape);
 	}
+	
+	private void drawTriangle(PlayerType p) {
+		triangle = new Polygon();
+		
+	}
+	
 
 	private void createHero(int x, int y, PlayerType p, RoleType r){
 		if(r == RoleType.WARRIOR)
