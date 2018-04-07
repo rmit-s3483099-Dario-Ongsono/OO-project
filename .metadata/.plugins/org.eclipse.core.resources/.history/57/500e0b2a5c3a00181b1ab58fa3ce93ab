@@ -52,7 +52,7 @@ public class Controller {
 	public Group createHerosView(){
 		Group heroGroup = new Group();
 		HeroView hero = new HeroView(3, 3, PlayerType.BLUE, RoleType.WARRIOR);
-		heroArray[0] = hero;
+
 		tileArray[3][3].getTile().setHero(hero.getHero()); //may change hero.getHero() to heroView
 		//TODO
 

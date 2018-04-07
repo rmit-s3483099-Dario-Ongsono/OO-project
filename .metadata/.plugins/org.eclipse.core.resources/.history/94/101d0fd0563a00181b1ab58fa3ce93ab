@@ -12,18 +12,13 @@ public class Controller {
 	private TileView tileView;
 	private Group tileGroup;
 	private Group heroGroup;
-	private TileView[][] tileArray;
-	private HeroView[] heroArray;
+	private TileView[][] tileArray = new TileView[WIDTH][HEIGHT];
 
 	public static final int TILE_SIZE = 50;
 	public static final int WIDTH = 12;
 	public static final int HEIGHT = 14;
 
-	private static final int HERO_NUM = 1;
-
 	public Controller(){
-		tileArray = new TileView[WIDTH][HEIGHT];
-		heroArray = new HeroView[HERO_NUM];
 		tileGroup = createTilesView();
 		heroGroup = createHerosView();
 		gameBoard = new Board(TILE_SIZE, WIDTH, HEIGHT, tileGroup, heroGroup);
@@ -39,8 +34,6 @@ public class Controller {
 			for(int y = 0; y < HEIGHT; y++){
 				TileView tileView = new TileView(x, y, TILE_SIZE);
 
-				addTileEvents(tileView);
-
 				tileArray[x][y] = tileView;
 
 				tileGroup.getChildren().add(tileView);
@@ -52,7 +45,7 @@ public class Controller {
 	public Group createHerosView(){
 		Group heroGroup = new Group();
 		HeroView hero = new HeroView(3, 3, PlayerType.BLUE, RoleType.WARRIOR);
-		heroArray[0] = hero;
+
 		tileArray[3][3].getTile().setHero(hero.getHero()); //may change hero.getHero() to heroView
 		//TODO
 
@@ -68,36 +61,9 @@ public class Controller {
 		hero.setOnMousePressed(e ->{
 			hero.pressed(); // change stroke color to white and turn boolean select to true
 			ValidTileDetector validTile = new ValidTileDetector(tileArray, hero);
-		});
-	}
 
-	private void addTileEvents(TileView tileView){
-		tileView.setOnMouseClicked(e ->{
-			HeroView selectedHero = findSelectedHero(heroArray);
-			if(tileView.getTile().isReady()){
-				int x = tileView.getTile().getX();
-				int y = tileView.getTile().getY();
-				int oldx = selectedHero.getHero().getLocationX();
-				int oldy = selectedHero.getHero().getLocationY();
-				selectedHero.getHero().setLocationX(x);
-				selectedHero.getHero().setLocationY(y);
-				selectedHero.move();
-				tileView.getTile().setHero(selectedHero.getHero());
-				tileArray[oldx][oldy].getTile().setHero(null);
-				tileClean();
-			}
 
 		});
-	}
-
-	private HeroView findSelectedHero(HeroView[] heroArray){
-		HeroView selectedHero;
-		for(int i = 0; i < heroArray.length; i++){
-			if(heroArray[i].getHero().isSelected()){
-				return selectedHero = heroArray[i];
-			}
-		}
-		return selectedHero = null;
 	}
 
 	private void tileClean(){
@@ -109,7 +75,9 @@ public class Controller {
 		}
 	}
 
-
+	private void addTileEvents(TileView tile){
+		//TODO
+	}
 
 	public Board getGameBoard(){
 		return gameBoard;

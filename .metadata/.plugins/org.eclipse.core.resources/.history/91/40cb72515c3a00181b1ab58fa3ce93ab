@@ -54,6 +54,5 @@ public class HeroView extends StackPane{
 	public void move(){
 		this.relocate(hero.getLocationX() * Controller.TILE_SIZE , hero.getLocationY() * Controller.TILE_SIZE);
 		hero.selectHero(false);
-		shape.setStroke(Color.BLACK);
 	}
 }
