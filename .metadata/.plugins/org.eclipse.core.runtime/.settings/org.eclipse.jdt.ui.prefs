@@ -1,8 +1,15 @@
 =\=\=\=\=\=\=
+<<<<<<< HEAD
+<<<<<<<=Updated upstream
+>>>>>>>=96db3ba67d52d1ae1ba01fe99b58813877f51e2c
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="javafx.scene.paint.Paint"><rhs name\="javafx.scene.paint.Color"/></lhs></history>
+content_assist_number_of_computers=24
+=======
 <<<<<<<=HEAD
 >>>>>>>=a7343e0e91e67b828fe7fc7d9d6c22501a1fb438
 content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="javafx.scene.paint.Paint"><rhs name\="javafx.scene.paint.Color"/></lhs></history>
 content_assist_number_of_computers=15
+>>>>>>> 16b5db1e0f7ad48e0ae8e9580706b126c5d491f7
 content_assist_proposals_background=255,255,255
 content_assist_proposals_foreground=0,0,0
 eclipse.preferences.version=1
