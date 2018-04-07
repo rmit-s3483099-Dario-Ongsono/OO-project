@@ -37,9 +37,9 @@ public class HeroView extends StackPane{
 		if(r == RoleType.WARRIOR)
 			hero = new Warrior(x, y, p, r);
 		else if(r == RoleType.GUNNER)
-			; //TODO
+			;
 		else
-			; //TODO
+			;
 	}
 
 	public Hero getHero(){

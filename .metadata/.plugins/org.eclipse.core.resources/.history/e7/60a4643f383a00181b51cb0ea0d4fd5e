@@ -16,7 +16,7 @@ public class HeroView extends StackPane{
 		relocate(x * Controller.TILE_SIZE, y * Controller.TILE_SIZE);
 		drawShape(p);
 
-		createHero(x, y, p, r);
+
 	}
 
 
@@ -33,13 +33,13 @@ public class HeroView extends StackPane{
 		getChildren().addAll(shape);
 	}
 
-	private void createHero(int x, int y, PlayerType p, RoleType r){
+	private void generateHero(int x, int y, PlayerType p, RoleType r){
 		if(r == RoleType.WARRIOR)
 			hero = new Warrior(x, y, p, r);
 		else if(r == RoleType.GUNNER)
-			; //TODO
+			;
 		else
-			; //TODO
+			;
 	}
 
 	public Hero getHero(){
