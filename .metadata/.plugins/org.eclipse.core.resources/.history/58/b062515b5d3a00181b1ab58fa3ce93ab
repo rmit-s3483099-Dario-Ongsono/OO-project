@@ -47,23 +47,18 @@ public class ValidTileDetector {
 	}
 
 	private void showStraightLine(int x, int y, int s){
-		if(x - s >= 0){
+		if(x - s >= 0 || y - s >= 0){
 			tileArray[x - s][y].setFill(Color.GREEN);
 			tileArray[x - s][y].getTile().setReady(true);
-		}
-
-		if(y - s >= 0){
 
 			tileArray[x][y - s].setFill(Color.GREEN);
 			tileArray[x][y - s].getTile().setReady(true);
 		}
-		if(x + s <= Controller.WIDTH){
+
+		if(x + s <= Controller.WIDTH || y + s <= Controller.HEIGHT){
 			tileArray[x + s][y].setFill(Color.GREEN);
 			tileArray[x + s][y].getTile().setReady(true);
 
-		}
-
-		if(y + s <= Controller.HEIGHT){
 			tileArray[x][y + s].setFill(Color.GREEN);
 			tileArray[x][y + s].getTile().setReady(true);
 		}
