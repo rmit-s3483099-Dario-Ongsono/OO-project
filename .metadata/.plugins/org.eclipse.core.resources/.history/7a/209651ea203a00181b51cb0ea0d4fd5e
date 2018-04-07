@@ -1,0 +1,7 @@
+package gameView;
+
+import javafx.scene.layout.StackPane;
+
+public abstract class HeroView extends StackPane{
+	
+}

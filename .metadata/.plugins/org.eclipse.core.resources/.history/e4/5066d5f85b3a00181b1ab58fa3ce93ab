@@ -1,0 +1,116 @@
+package gameController;
+
+
+
+import gameModel.*;
+import gameView.*;
+import javafx.scene.Group;
+import javafx.scene.paint.Color;
+
+public class Controller {
+	private Board gameBoard;
+	private TileView tileView;
+	private Group tileGroup;
+	private Group heroGroup;
+	private TileView[][] tileArray = new TileView[WIDTH][HEIGHT];
+	private HeroView[] heroArray = new HeroView[HERO_NUM];
+
+	public static final int TILE_SIZE = 50;
+	public static final int WIDTH = 12;
+	public static final int HEIGHT = 14;
+
+	private static final int HERO_NUM = 1;
+
+	public Controller(){
+		tileGroup = createTilesView();
+		heroGroup = createHerosView();
+		gameBoard = new Board(TILE_SIZE, WIDTH, HEIGHT, tileGroup, heroGroup);
+
+	}
+
+
+
+	public Group createTilesView(){
+		Group tileGroup = new Group();
+
+		for(int x = 0; x < WIDTH; x++){
+			for(int y = 0; y < HEIGHT; y++){
+				TileView tileView = new TileView(x, y, TILE_SIZE);
+
+				addTileEvents(tileView);
+
+				tileArray[x][y] = tileView;
+
+				tileGroup.getChildren().add(tileView);
+			}
+		}
+		return tileGroup;
+	}
+
+	public Group createHerosView(){
+		Group heroGroup = new Group();
+		HeroView hero = new HeroView(3, 3, PlayerType.BLUE, RoleType.WARRIOR);
+
+		tileArray[3][3].getTile().setHero(hero.getHero()); //may change hero.getHero() to heroView
+		//TODO
+
+		addHeroEvents(hero);
+
+		//TODO
+
+		heroGroup.getChildren().add(hero);
+		return heroGroup;
+	}
+
+	private void addHeroEvents(HeroView hero){
+		hero.setOnMousePressed(e ->{
+			hero.pressed(); // change stroke color to white and turn boolean select to true
+			ValidTileDetector validTile = new ValidTileDetector(tileArray, hero);
+		});
+	}
+
+	private void addTileEvents(TileView tileView){
+		tileView.setOnMouseClicked(e ->{
+			HeroView selectedHero = findSelectedHero(heroArray);
+			if(tileView.getTile().isReady()){
+				int x = tileView.getTile().getX();
+				int y = tileView.getTile().getY();
+				int oldx = selectedHero.getHero().getLocationX();
+				int oldy = selectedHero.getHero().getLocationY();
+				selectedHero.getHero().setLocationX(x);
+				selectedHero.getHero().setLocationY(y);
+				selectedHero.move();
+				tileView.getTile().setHero(selectedHero.getHero());
+				tileArray[oldx][oldy].getTile().setHero(null);
+				tileClean();
+			}
+
+		});
+	}
+
+	private HeroView findSelectedHero(HeroView[] heroArray){
+		HeroView selectedHero;
+		for(int i = 0; i < heroArray.length; i++){
+			if(heroArray[0].getHero().isSelected()){
+				return selectedHero = heroArray[0];
+			}
+		}
+		return selectedHero = null;
+	}
+
+	private void tileClean(){
+		for(int i = 0; i < tileArray.length; i++){
+			for(int j = 0; j < tileArray.length; j++){
+				tileArray[i][j].getTile().setReady(false);
+				tileArray[i][j].setFill(Color.valueOf("#feb"));
+			}
+		}
+	}
+
+
+
+	public Board getGameBoard(){
+		return gameBoard;
+	}
+
+}

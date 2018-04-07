@@ -1,5 +1,7 @@
 package view;
 
+import controller.Location;
+import controller.Move;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -14,11 +16,15 @@ import model.TestRole;
  *
  */
 public class Window extends Application{
-	public static final int SQUARE_SIZE = 100;
-	public static final int WIDTH = 8;
-	public static final int HEIGHT = 6;
+	public static final int SQUARE_SIZE = 50;
+	public static final int WIDTH = 13;
+	public static final int HEIGHT = 15;
+
+	// 2D array for Square class can be used? need be tested -----question by Vincent
 
 	private Square[][] board = new Square[WIDTH][HEIGHT];
+
+	//***********************************************
 
 	private Group squareGroup = new Group();
 	private Group pieceGroup = new Group();
@@ -27,8 +33,6 @@ public class Window extends Application{
 	private Pane getBoard(){
 		Pane root = new Pane();
 		root.setPrefSize(SQUARE_SIZE * WIDTH, SQUARE_SIZE * HEIGHT);
-
-
 
 		for (int y = 0; y < HEIGHT; y++){
 			for (int x = 0; x < WIDTH; x++){
@@ -48,8 +52,8 @@ public class Window extends Application{
 				}
 
 				if (role != null) {
-	                   square.setPiece(role);
-	                   pieceGroup.getChildren().add(role);
+					square.setPiece(role);
+	                pieceGroup.getChildren().add(role);
 	            }
 			}
 		}
@@ -65,29 +69,18 @@ public class Window extends Application{
 		else
 			hero = new TestRole(type ,x, y, countR++);
 
-
-
 		hero.setOnMouseClicked(e ->{
+
+			//turns switch, red first
 			if(Location.getTurn() % 2 == 0 && hero.getType()){
 				Location.selectPiece(hero);
-
-
-
-
+				Move.detectValidSquare(hero, board);
 			}else if(Location.getTurn() % 2 != 0 && !hero.getType()){
 				Location.selectPiece(hero);
+				Move.detectValidSquare(hero, board);
 			}else{
 				Alarm.display();
 				hero.getBg().setStroke(Color.BLACK);
-			}
-
-			for (int j = 0; j< HEIGHT; j++){
-				for (int i = 0; i < WIDTH; i++){
-					if(x == i - hero.getDX() && y == i -hero.getDX()){
-						System.out.print("ayeys");
-						board[i][j].setFill(Color.GREEN);
-					}
-		        }
 			}
 
 		});

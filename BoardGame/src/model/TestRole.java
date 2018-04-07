@@ -1,25 +1,27 @@
 package model;
 
+import controller.Location;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Ellipse;
-import view.Location;
 import view.Window;
 
 
 
 
 public class TestRole extends HeroTest{
-	private double newX, newY;
-	private double oldX, oldY;
+	private int x, y;
+	private int oldX, oldY;
 	private Ellipse bg;
 	private boolean heroType;
-	private int dx = 1;
+	private int dx = 1; //testing sample for indicating type of piece. change it to real type late
+
 	public TestRole(boolean type, int x, int y, int d){
 
 		move(x, y);
 		heroType = type;
 		dx = d;
-
+		this.x = x;
+		this.y = y;
 		bg = new Ellipse(Window.SQUARE_SIZE * 0.3125, Window.SQUARE_SIZE * 0.26);
 
 		if(type)
@@ -67,4 +69,16 @@ public class TestRole extends HeroTest{
 	public int getDX(){
 		return dx;
 	}
+
+	public int getX() {
+		return x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+
+
+
 }

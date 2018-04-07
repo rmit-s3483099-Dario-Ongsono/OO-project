@@ -1,13 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javafx.application.Application"/>
-<fullyQualifiedTypeName name="javafx.scene.layout.Pane"/>
 <fullyQualifiedTypeName name="javafx.scene.Scene"/>
-<fullyQualifiedTypeName name="javafx.scene.shape.Rectangle"/>
-<fullyQualifiedTypeName name="javafx.scene.layout.StackPane"/>
-<fullyQualifiedTypeName name="javafx.scene.paint.Color"/>
-<fullyQualifiedTypeName name="javafx.scene.Group"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="model.TestRole"/>
 <fullyQualifiedTypeName name="view.Location"/>
+<fullyQualifiedTypeName name="javafx.stage.Stage"/>
+<fullyQualifiedTypeName name="javafx.stage.Modality"/>
+<fullyQualifiedTypeName name="javafx.geometry.Insets"/>
+<fullyQualifiedTypeName name="javafx.scene.control.Button"/>
+<fullyQualifiedTypeName name="javafx.scene.control.Label"/>
+<fullyQualifiedTypeName name="model.TestRole"/>
+<fullyQualifiedTypeName name="view.Square"/>
+<fullyQualifiedTypeName name="view.Window"/>
+<fullyQualifiedTypeName name="controller.Move"/>
+<fullyQualifiedTypeName name="javafx.scene.layout.StackPane"/>
+<fullyQualifiedTypeName name="javafx.scene.layout.Pane"/>
+<fullyQualifiedTypeName name="javafx.scene.Group"/>
+<fullyQualifiedTypeName name="view.GameWindow"/>
+<fullyQualifiedTypeName name="view.Tile"/>
+<fullyQualifiedTypeName name="controller.GameInitial"/>
+<fullyQualifiedTypeName name="javafx.scene.shape.Ellipse"/>
+<fullyQualifiedTypeName name="model.PlayerType"/>
+<fullyQualifiedTypeName name="model.RoleType"/>
+<fullyQualifiedTypeName name="model.Warrior"/>
+<fullyQualifiedTypeName name="javafx.scene.shape.Rectangle"/>
+<fullyQualifiedTypeName name="javafx.scene.shape.Shape"/>
+<fullyQualifiedTypeName name="model.Tile"/>
+<fullyQualifiedTypeName name="javafx.scene.paint.Color"/>
+<fullyQualifiedTypeName name="view.Board"/>
+<fullyQualifiedTypeName name="controller.Driver"/>
+<fullyQualifiedTypeName name="model.Role"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="javafx.application.Application"/>
+<fullyQualifiedTypeName name="gameView.GameFrame"/>
 </qualifiedTypeNameHistroy>

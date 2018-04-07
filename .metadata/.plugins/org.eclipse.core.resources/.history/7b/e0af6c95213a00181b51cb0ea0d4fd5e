@@ -1,0 +1,31 @@
+package gameView;
+
+import javafx.scene.Group;
+import javafx.scene.layout.Pane;
+
+public class Board {
+	private int tilesize;
+	private int width;
+	private int height;
+	private Group tileGroup;
+
+	public Board(int tilesize, int width, int height, Group tileGroup){
+		this.tilesize = tilesize;
+		this.width = width;
+		this.height = height;
+		this.tileGroup = tileGroup;
+	}
+
+
+	public Pane displayBoard(){
+		Pane gameBoard = new Pane();
+		gameBoard.setPrefSize(tilesize * width, tilesize * height);
+
+		gameBoard.getChildren().addAll(tileGroup);
+		return gameBoard;
+	}
+
+
+
+
+}

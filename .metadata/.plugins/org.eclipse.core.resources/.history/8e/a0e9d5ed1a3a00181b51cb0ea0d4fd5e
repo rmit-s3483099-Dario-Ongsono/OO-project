@@ -1,0 +1,14 @@
+package gameView;
+
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+
+public class TileView extends Rectangle{
+
+	public TileView(int x, int y, int tileSize){
+		super(tileSize, tileSize);
+		this.relocate(x * tileSize, y * tileSize);
+		this.setFill(Color.valueOf("#feb"));
+		this.setStroke(Color.BLACK);
+	}
+}

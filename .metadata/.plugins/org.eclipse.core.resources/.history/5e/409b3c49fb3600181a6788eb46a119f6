@@ -1,0 +1,12 @@
+package controller;
+
+public class Driver {
+	GameInitial game = new GameInitial();
+
+	public static GameInitial getGame(){
+		return game;
+	}
+
+
+
+}
