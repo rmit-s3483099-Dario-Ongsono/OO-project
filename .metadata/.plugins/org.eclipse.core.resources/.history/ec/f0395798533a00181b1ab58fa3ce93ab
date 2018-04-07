@@ -4,7 +4,7 @@ public class Tile {
 	private int x;
 	private int y;
 	private Hero hero;
-	private boolean ready;
+
 
 	public Tile(int x, int y){
 		this.x = x;
@@ -19,12 +19,5 @@ public class Tile {
 		return hero != null;
 	}
 
-	public void setReady(boolean ready){
-		this.ready = ready;
-	}
-
-	public boolean isReady(){
-		return ready;
-	}
 
 }

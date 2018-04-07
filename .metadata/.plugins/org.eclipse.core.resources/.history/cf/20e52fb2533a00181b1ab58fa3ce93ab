@@ -1,0 +1,52 @@
+package gameController;
+
+import gameView.*;
+import javafx.scene.paint.Color;
+import view.Controller;
+
+public class ValidTileDetector {
+	private TileView[][] tileArray;
+	private HeroView hero;
+
+	public ValidTileDetector(TileView[][] tileArray, HeroView hero){
+		this.tileArray = tileArray;
+		this.hero = hero;
+	}
+
+	private void showDiagonalLine(int x, int y, int d) {
+
+		if(x - d >= 0 && x + d <= Controller.WIDTH || y - d >= 0 && y + d <= Controller.HEIGHT){
+			tileArray[x - d][y - d].setFill(Color.GREEN);
+			tileArray[x - d][y - d].setReady(true);
+
+			tileArray[x + d][y - d].setFill(Color.GREEN);
+			tileArray[x + d][y - d].setReady(true);
+
+			tileArray[x + d][y + d].setFill(Color.GREEN);
+			tileArray[x + d][y + d].setReady(true);
+
+			tileArray[x - d][y + d].setFill(Color.GREEN);
+			tileArray[x - d][y + d].setReady(true);
+		}
+	}
+
+	private void showStraightLine(int x, int y, int s){
+		if(x - s >= 0 || y - s >= 0){
+			tileArray[x - s][y].setFill(Color.GREEN);
+			tileArray[x - s][y].setReady(true);
+
+			tileArray[x][y - s].setFill(Color.GREEN);
+			tileArray[x][y - s].setReady(true);
+		}
+
+		if(x + s <= Controller.WIDTH || y + s <= Controller.HEIGHT){
+			tileArray[x + s][y].setFill(Color.GREEN);
+			tileArray[x + s][y].setReady(true);
+
+			tileArray[x][y + s].setFill(Color.GREEN);
+			tileArray[x][y + s].setReady(true);
+		}
+	}
+
+
+}

@@ -2,7 +2,8 @@ package gameController;
 
 
 
-import gameModel.*;
+import gameModel.PlayerType;
+import gameModel.RoleType;
 import gameView.*;
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
@@ -22,7 +23,7 @@ public class Controller {
 		tileGroup = createTilesView();
 		heroGroup = createHerosView();
 		gameBoard = new Board(TILE_SIZE, WIDTH, HEIGHT, tileGroup, heroGroup);
-
+	
 	}
 
 
@@ -61,6 +62,9 @@ public class Controller {
 		hero.setOnMousePressed(e ->{
 			hero.pressed(); // change stroke color to white and turn boolean select to true
 			ValidTileDetector validTile = new ValidTileDetector(tileArray, hero);
+
+
+
 
 
 		});

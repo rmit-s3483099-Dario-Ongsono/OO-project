@@ -1,18 +1,18 @@
 package gameController;
 
+import com.sun.prism.paint.Color;
 
-
-import gameModel.*;
+import gameModel.PlayerType;
+import gameModel.RoleType;
 import gameView.*;
 import javafx.scene.Group;
-import javafx.scene.paint.Color;
 
 public class Controller {
 	private Board gameBoard;
 	private TileView tileView;
 	private Group tileGroup;
 	private Group heroGroup;
-	private TileView[][] tileArray = new TileView[WIDTH][HEIGHT];
+	private TileView[][] tileArray;
 
 	public static final int TILE_SIZE = 50;
 	public static final int WIDTH = 12;
@@ -22,7 +22,7 @@ public class Controller {
 		tileGroup = createTilesView();
 		heroGroup = createHerosView();
 		gameBoard = new Board(TILE_SIZE, WIDTH, HEIGHT, tileGroup, heroGroup);
-
+		tileArray = new TileView[WIDTH][HEIGHT];
 	}
 
 
@@ -60,19 +60,13 @@ public class Controller {
 	private void addHeroEvents(HeroView hero){
 		hero.setOnMousePressed(e ->{
 			hero.pressed(); // change stroke color to white and turn boolean select to true
-			ValidTileDetector validTile = new ValidTileDetector(tileArray, hero);
+
+
+
+
 
 
 		});
-	}
-
-	private void tileClean(){
-		for(int i = 0; i < tileArray.length; i++){
-			for(int j = 0; j < tileArray.length; j++){
-				tileArray[i][j].getTile().setReady(false);
-				tileArray[i][j].setFill(Color.valueOf("#feb"));
-			}
-		}
 	}
 
 	private void addTileEvents(TileView tile){
