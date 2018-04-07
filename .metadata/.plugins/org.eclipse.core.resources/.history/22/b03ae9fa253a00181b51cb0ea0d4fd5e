@@ -1,0 +1,7 @@
+package gameModel;
+
+public abstract class Hero{
+	public Hero(){
+		
+	}
+}

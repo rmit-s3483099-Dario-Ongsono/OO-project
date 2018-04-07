@@ -1,0 +1,22 @@
+package gameModel;
+
+public class Warrior extends Hero implements Capture{
+
+	public Warrior(int x, int y, PlayerType p, RoleType r) {
+		super(x, y, p, r);
+
+	}
+
+	@Override
+	public void move(int x, int y) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void capture() {
+		// TODO Auto-generated method stub
+
+	}
+
+}
