@@ -24,11 +24,12 @@
 <fullyQualifiedTypeName name="javafx.scene.shape.Rectangle"/>
 <fullyQualifiedTypeName name="javafx.scene.shape.Shape"/>
 <fullyQualifiedTypeName name="model.Tile"/>
-<fullyQualifiedTypeName name="javafx.scene.paint.Color"/>
 <fullyQualifiedTypeName name="view.Board"/>
 <fullyQualifiedTypeName name="controller.Driver"/>
 <fullyQualifiedTypeName name="model.Role"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="javafx.application.Application"/>
 <fullyQualifiedTypeName name="gameView.GameFrame"/>
+<fullyQualifiedTypeName name="gameView.TileView"/>
+<fullyQualifiedTypeName name="javafx.scene.paint.Color"/>
 </qualifiedTypeNameHistroy>
