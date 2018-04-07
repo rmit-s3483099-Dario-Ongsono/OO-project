@@ -25,7 +25,7 @@ public class HeroView extends StackPane{
 
 		shape.setFill(p == PlayerType.BLUE? Color.BLUE:Color.RED);
 
-		shape.setStrokeWidth(Controller.TILE_SIZE * 0.05);
+		shape.setStrokeWidth(Controller.TILE_SIZE * 0.1);
 		shape.setStroke(Color.BLACK);
 
 		shape.setTranslateX((Controller.TILE_SIZE - Controller.TILE_SIZE * 0.3125 * 2 ) / 2);
@@ -48,6 +48,5 @@ public class HeroView extends StackPane{
 
 	public void pressed(){
 		shape.setStroke(Color.WHITE);
-		hero.selectHero(true);
 	}
 }

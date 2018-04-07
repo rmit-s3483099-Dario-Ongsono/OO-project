@@ -58,8 +58,7 @@ public class Controller {
 
 	private void addHeroEvents(HeroView hero){
 		hero.setOnMousePressed(e ->{
-			hero.pressed(); // change stroke color to white and turn boolean select to true
-
+			hero.pressed();
 
 
 

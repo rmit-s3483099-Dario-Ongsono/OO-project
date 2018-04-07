@@ -4,7 +4,7 @@ public abstract class Hero implements Move{
 	private boolean alive;
 	private PlayerType pType;
 	private RoleType rType;
-	private boolean selected;
+
 	private int locationX, locationY;
 
 	public Hero(int x, int y, PlayerType p, RoleType r ){
@@ -48,11 +48,4 @@ public abstract class Hero implements Move{
 		this.locationY = y;
 	}
 
-	public void selectHero(boolean select){
-		this.selected = select;
-	}
-
-	public boolean isSelected(){
-		return selected;
-	}
 }

@@ -33,9 +33,7 @@ public class Controller {
 		for(int x = 0; x < WIDTH; x++){
 			for(int y = 0; y < HEIGHT; y++){
 				TileView tileView = new TileView(x, y, TILE_SIZE);
-
 				tileArray[x][y] = tileView;
-
 				tileGroup.getChildren().add(tileView);
 			}
 		}
@@ -45,7 +43,7 @@ public class Controller {
 	public Group createHerosView(){
 		Group heroGroup = new Group();
 		HeroView hero = new HeroView(3, 3, PlayerType.BLUE, RoleType.WARRIOR);
-		tileArray[3][3].getTile().setHero(hero.getHero()); //may change hero.getHero() to heroView
+
 		//TODO
 
 		addHeroEvents(hero);
@@ -58,9 +56,8 @@ public class Controller {
 
 	private void addHeroEvents(HeroView hero){
 		hero.setOnMousePressed(e ->{
-			hero.pressed(); // change stroke color to white and turn boolean select to true
-
-
+			hero.pressed();
+			hero.getHero().selectHero(true);
 
 
 

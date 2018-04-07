@@ -48,6 +48,5 @@ public class HeroView extends StackPane{
 
 	public void pressed(){
 		shape.setStroke(Color.WHITE);
-		hero.selectHero(true);
 	}
 }
