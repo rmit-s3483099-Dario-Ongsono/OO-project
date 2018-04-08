@@ -68,6 +68,4 @@ public class ValidTileDetector {
 			tileArray[x][y + s].getTile().setReady(true);
 		}
 	}
-
-
 }

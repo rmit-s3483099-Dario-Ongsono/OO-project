@@ -15,11 +15,21 @@ public class Controller {
 	private TileView[][] tileArray;
 	private HeroView[] heroArray;
 
-	public static final int TILE_SIZE = 50;
-	public static final int WIDTH = 12;
-	public static final int HEIGHT = 14;
+	public static final int TILE_SIZE = 50; //This should be in Model package in Board class, - Dario
+										   //gameView package should have BoardView class instead - Dario
 
-	private static final int HERO_NUM = 1;
+	public static final int WIDTH = 12;   //this too - Dario
+	public static final int HEIGHT = 14;  //this too - Dario
+
+	private static final int HERO_NUM = 1; //This variable maybe should be in a class of its own (maybe) - Dario
+
+//	Overall comment for above variables:
+//
+//		these variables should be inside the model package because the controller
+//		package shouldn't need to know how big of a board size it needs to make or
+//		how many number of heroes the board would have
+//
+
 
 	public Controller(){
 		tileArray = new TileView[WIDTH][HEIGHT];
@@ -49,6 +59,8 @@ public class Controller {
 		return tileGroup;
 	}
 
+
+
 	public Group createHerosView(){
 		Group heroGroup = new Group();
 		HeroView hero = new HeroView(3, 3, PlayerType.BLUE, RoleType.WARRIOR);
@@ -64,12 +76,16 @@ public class Controller {
 		return heroGroup;
 	}
 
+
+
 	private void addHeroEvents(HeroView hero){
 		hero.setOnMousePressed(e ->{
 			hero.pressed(); // change stroke color to white and turn boolean select to true
 			ValidTileDetector validTile = new ValidTileDetector(tileArray, hero);
 		});
 	}
+
+
 
 	private void addTileEvents(TileView tileView){
 		tileView.setOnMouseClicked(e ->{
@@ -90,6 +106,9 @@ public class Controller {
 		});
 	}
 
+
+
+
 	private HeroView findSelectedHero(HeroView[] heroArray){
 		HeroView selectedHero;
 		for(int i = 0; i < heroArray.length; i++){
@@ -99,6 +118,8 @@ public class Controller {
 		}
 		return selectedHero = null;
 	}
+
+
 
 	private void tileClean(){
 		for(int i = 0; i < tileArray.length; i++){

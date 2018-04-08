@@ -16,6 +16,7 @@ public abstract class Hero implements Move{
 
 	}
 
+
 	public PlayerType getPlayerType(){
 		return pType;
 	}
