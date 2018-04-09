@@ -43,20 +43,6 @@ public class HeroView extends StackPane{
 		getChildren().addAll(shape);
 	}
 
-<<<<<<< Updated upstream
-	private void drawTriangle(PlayerType p) {
-
-		triangle = new Polygon(Controller.TILE_SIZE*0.3125, Controller.TILE_SIZE * 0.26);
-
-
-	}
-=======
-//	private void drawTriangle(PlayerType p) {
-//		triangle = new Polygon();
-//		triangle = new Polygon(Controller.TILE_SIZE*0.3125, Controller.TILE_SIZE * 0.26);
-//	}
->>>>>>> Stashed changes
-
 
 	private void createHero(int x, int y, PlayerType p, RoleType r){
 		if(r == RoleType.WARRIOR)
