@@ -82,15 +82,6 @@ public void createHeroModel(){
 		addHeroEvents(hero);
 		heroGroup.getChildren().add(hero);
 
-
-		h = new Support(1, 1, PlayerType.RED, RoleType.SUPPORT);
-		hero = new HeroView(h);
-
-		heroArray.add(hero);
-		tileArray[1][1].getTile().setHero(h);
-		addHeroEvents(hero);
-		heroGroup.getChildren().add(hero);
-
 		// set the Blue player's minions in the col 0 and the Red Player's minions in the col 11
 //		int LocPlayerB = 0, LocPlayerR = 11;
 //		// for each play need 3 minions
@@ -234,7 +225,6 @@ public void createHeroModel(){
 				selectedHero.setLocationX(x);
 				selectedHero.setLocationY(y);
 				//selectedHero.move();
-				System.out.println("CurSelected" + curSelected);
 				heroArray.get(curSelected).move();
 				tileView.getTile().setHero(selectedHero);
 				tileArray[oldx][oldy].getTile().setHero(null);
@@ -249,9 +239,7 @@ public void createHeroModel(){
 		Hero selectedHero;
 		for(int i = 0; i < heroArray.size(); i++){
 			if(heroArray.get(i).getHero().isSelected()){
-				curSelected = i;
 				return selectedHero = heroArray.get(i).getHero();
-
 			}
 		}
 		return selectedHero = null;
