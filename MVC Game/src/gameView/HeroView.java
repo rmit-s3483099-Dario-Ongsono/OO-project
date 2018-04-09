@@ -44,8 +44,13 @@ public class HeroView extends StackPane{
 	}
 
 	private void drawTriangle(PlayerType p) {
+<<<<<<< Updated upstream
 		triangle = new Polygon();
 
+=======
+		triangle = new Polygon(Controller.TILE_SIZE*0.3125, Controller.TILE_SIZE * 0.26);
+		
+>>>>>>> Stashed changes
 	}
 
 
