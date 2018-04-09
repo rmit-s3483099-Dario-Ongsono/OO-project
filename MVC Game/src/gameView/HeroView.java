@@ -11,7 +11,7 @@ import javafx.scene.shape.Shape;
 
 public class HeroView extends StackPane{
 	private Shape shape;
-	private Polygon triangle;
+//	private Polygon triangle;
 	private Hero hero;
 
 	public HeroView(Hero h){
@@ -43,12 +43,19 @@ public class HeroView extends StackPane{
 		getChildren().addAll(shape);
 	}
 
+<<<<<<< Updated upstream
 	private void drawTriangle(PlayerType p) {
 
 		triangle = new Polygon(Controller.TILE_SIZE*0.3125, Controller.TILE_SIZE * 0.26);
 
 
 	}
+=======
+//	private void drawTriangle(PlayerType p) {
+//		triangle = new Polygon();
+//		triangle = new Polygon(Controller.TILE_SIZE*0.3125, Controller.TILE_SIZE * 0.26);
+//	}
+>>>>>>> Stashed changes
 
 
 	private void createHero(int x, int y, PlayerType p, RoleType r){
