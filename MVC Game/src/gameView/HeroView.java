@@ -11,7 +11,10 @@ import javafx.scene.shape.Shape;
 
 public class HeroView extends StackPane{
 	private Shape shape;
+	
 	private Polygon triangle;
+	
+	
 	private Hero hero;
 
 	public HeroView(Hero h){
@@ -22,12 +25,12 @@ public class HeroView extends StackPane{
 
 
 
-	public HeroView(int x, int y, PlayerType p, RoleType r){
-		relocate(x * Controller.TILE_SIZE, y * Controller.TILE_SIZE);
-		drawShape(p);
-
-		createHero(x, y, p, r);
-	}
+//	public HeroView(int x, int y, PlayerType p, RoleType r){
+//		relocate(x * Controller.TILE_SIZE, y * Controller.TILE_SIZE);
+//		drawShape(p);
+//
+//		createHero(x, y, p, r);
+//	}
 
 
 	private void drawShape(PlayerType p){
@@ -51,16 +54,16 @@ public class HeroView extends StackPane{
 	}
 
 
-	private void createHero(int x, int y, PlayerType p, RoleType r){
-		if(r == RoleType.WARRIOR)
-			hero = new Warrior(x, y, p, r);
-		else if(r == RoleType.GUNNER)
-			hero = new Warrior(x, y, p, r)
-			; //TODO
-		else
-			hero = new Warrior(x, y, p, r)
-			; //TODO
-	}
+//	private void createHero(int x, int y, PlayerType p, RoleType r){
+//		if(r == RoleType.WARRIOR)
+//			hero = new Warrior(x, y, p, r);
+//		else if(r == RoleType.GUNNER)
+//			hero = new Warrior(x, y, p, r)
+//			; //TODO
+//		else
+//			hero = new Warrior(x, y, p, r)
+//			; //TODO
+//	}
 
 	public Hero getHero(){
 		return hero;

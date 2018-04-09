@@ -33,4 +33,6 @@
 <fullyQualifiedTypeName name="gameView.TileView"/>
 <fullyQualifiedTypeName name="javafx.scene.paint.Color"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="gameView.HeroView"/>
+<fullyQualifiedTypeName name="gameModel.Hero"/>
 </qualifiedTypeNameHistroy>
