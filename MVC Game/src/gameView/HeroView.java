@@ -11,10 +11,14 @@ import javafx.scene.shape.Shape;
 
 public class HeroView extends StackPane{
 	private Shape shape;
+<<<<<<< HEAD
 	
 	private Polygon triangle;
 	
 	
+=======
+//	private Polygon triangle;
+>>>>>>> eb65940696e264ecbf672ed1a2f29024eea181fd
 	private Hero hero;
 
 	public HeroView(Hero h){
@@ -44,13 +48,6 @@ public class HeroView extends StackPane{
 		shape.setTranslateX((Controller.TILE_SIZE - Controller.TILE_SIZE * 0.3125 * 2 ) / 2);
 		shape.setTranslateY((Controller.TILE_SIZE - Controller.TILE_SIZE * 0.26 * 2) / 2 + Controller.TILE_SIZE * 0.07);
 		getChildren().addAll(shape);
-	}
-
-	private void drawTriangle(PlayerType p) {
-
-		triangle = new Polygon(Controller.TILE_SIZE*0.3125, Controller.TILE_SIZE * 0.26);
-
-
 	}
 
 
