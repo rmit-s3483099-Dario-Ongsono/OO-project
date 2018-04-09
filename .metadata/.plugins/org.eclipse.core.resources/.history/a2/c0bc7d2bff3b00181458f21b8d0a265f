@@ -11,8 +11,14 @@ import javafx.scene.shape.Shape;
 
 public class HeroView extends StackPane{
 	private Shape shape;
+<<<<<<< HEAD
+	
+	private Polygon triangle;
+	
+	
+=======
 //	private Polygon triangle;
-
+>>>>>>> eb65940696e264ecbf672ed1a2f29024eea181fd
 	private Hero hero;
 
 	public HeroView(Hero h){
