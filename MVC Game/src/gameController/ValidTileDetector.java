@@ -22,8 +22,9 @@ public class ValidTileDetector {
 		int y = hero.getHero().getLocationY();
 		int smove = hero.getHero().getRoleType().SMOVE;
 		int dmove = hero.getHero().getRoleType().DMOVE;
-
+		System.out.print("yes i am");
 		if(tileArray[x][y].getTile().hasHero()){
+			
 			showStraightLine(x, y, smove);
 			showDiagonalLine(x, y, dmove);
 		}
