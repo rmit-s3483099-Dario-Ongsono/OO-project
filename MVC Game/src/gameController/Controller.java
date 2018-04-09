@@ -2,6 +2,8 @@ package gameController;
 
 
 
+import java.util.ArrayList;
+
 import gameModel.*;
 import gameView.*;
 import javafx.scene.Group;
@@ -13,7 +15,7 @@ public class Controller {
 	private Group tileGroup;
 	private Group heroGroup;
 	private TileView[][] tileArray;
-	private HeroView[] heroArray;
+	private ArrayList<HeroView> heroArray;
 
 	public static final int TILE_SIZE = 50; //This should be in Model package in Board class, - Dario
 										   //gameView package should have BoardView class instead - Dario
@@ -21,7 +23,7 @@ public class Controller {
 	public static final int WIDTH = 12;   //this too - Dario
 	public static final int HEIGHT = 14;  //this too - Dario
 
-	private static final int HERO_NUM = 1; //This variable maybe should be in a class of its own (maybe) - Dario
+	//private static final int HERO_NUM = 6; //This variable maybe should be in a class of its own (maybe) - Dario
 
 //	Overall comment for above variables:
 //
@@ -33,7 +35,7 @@ public class Controller {
 
 	public Controller(){
 		tileArray = new TileView[WIDTH][HEIGHT];
-		heroArray = new HeroView[HERO_NUM];
+		heroArray = new ArrayList();
 		tileGroup = createTilesView();
 		heroGroup = createHerosView();
 		gameBoard = new Board(TILE_SIZE, WIDTH, HEIGHT, tileGroup, heroGroup);
@@ -62,19 +64,67 @@ public class Controller {
 
 
 	public Group createHerosView(){
+		int redY = 1;
+		int blueY = HEIGHT - 1;
 		Group heroGroup = new Group();
-		HeroView hero = new HeroView(3, 3, PlayerType.BLUE, RoleType.WARRIOR);
-		heroArray[0] = hero;
-		tileArray[3][3].getTile().setHero(hero.getHero()); //may change hero.getHero() to heroView
-		//TODO
+		HeroView hero;
 
+
+
+		hero = new HeroView(2, blueY, PlayerType.BLUE, RoleType.WARRIOR);
+		heroArray.add(hero);
+		tileArray[2][blueY].getTile().setHero(hero.getHero()); //may change hero.getHero() to heroView
 		addHeroEvents(hero);
-
-		//TODO
-
 		heroGroup.getChildren().add(hero);
+
+
+		hero = new HeroView(5, blueY, PlayerType.BLUE, RoleType.SUPPORT);
+		heroArray.add(hero);
+		tileArray[5][blueY].getTile().setHero(hero.getHero()); //may change hero.getHero() to heroView
+		addHeroEvents(hero);
+		heroGroup.getChildren().add(hero);
+
+
+
+		hero = new HeroView(7, blueY, PlayerType.BLUE, RoleType.GUNNER);
+		heroArray.add(hero);
+		tileArray[7][blueY].getTile().setHero(hero.getHero()); //may change hero.getHero() to heroView
+		addHeroEvents(hero);
+		heroGroup.getChildren().add(hero);
+
+		hero = new HeroView(2, redY, PlayerType.RED, RoleType.WARRIOR);
+		heroArray.add(hero);
+		tileArray[2][redY].getTile().setHero(hero.getHero()); //may change hero.getHero() to heroView
+		addHeroEvents(hero);
+		heroGroup.getChildren().add(hero);
+
+
+		hero = new HeroView(5, redY, PlayerType.RED, RoleType.SUPPORT);
+		heroArray.add(hero);
+		tileArray[5][redY].getTile().setHero(hero.getHero()); //may change hero.getHero() to heroView
+		addHeroEvents(hero);
+		heroGroup.getChildren().add(hero);
+
+
+		hero = new HeroView(7, redY, PlayerType.RED, RoleType.GUNNER);
+		heroArray.add(hero);
+		tileArray[7][redY].getTile().setHero(hero.getHero()); //may change hero.getHero() to heroView
+		addHeroEvents(hero);
+		heroGroup.getChildren().add(hero);
+
 		return heroGroup;
 	}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -109,11 +159,11 @@ public class Controller {
 
 
 
-	private HeroView findSelectedHero(HeroView[] heroArray){
+	private HeroView findSelectedHero(ArrayList<HeroView> heroArray){
 		HeroView selectedHero;
-		for(int i = 0; i < heroArray.length; i++){
-			if(heroArray[i].getHero().isSelected()){
-				return selectedHero = heroArray[i];
+		for(int i = 0; i < heroArray.size(); i++){
+			if(heroArray.get(i).getHero().isSelected()){
+				return selectedHero = heroArray.get(i);
 			}
 		}
 		return selectedHero = null;
@@ -122,8 +172,8 @@ public class Controller {
 
 
 	private void tileClean(){
-		for(int i = 0; i < tileArray.length; i++){
-			for(int j = 0; j < tileArray.length; j++){
+		for(int i = 0; i < WIDTH; i++){
+			for(int j = 0; j < HEIGHT; j++){
 				tileArray[i][j].getTile().setReady(false);
 				tileArray[i][j].setFill(Color.valueOf("#feb"));
 			}
