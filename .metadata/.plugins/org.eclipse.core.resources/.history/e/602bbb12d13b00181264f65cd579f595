@@ -17,7 +17,6 @@ public class HeroView extends StackPane{
 	public HeroView(Hero h){
 		relocate(h.getLocationX() * Controller.TILE_SIZE , h.getLocationY() * Controller.TILE_SIZE);
 		drawShape(h.getPlayerType());
-		this.hero = h;
 	}
 	
 	

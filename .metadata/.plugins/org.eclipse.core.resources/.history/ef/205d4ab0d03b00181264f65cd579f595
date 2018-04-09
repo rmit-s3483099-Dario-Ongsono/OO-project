@@ -13,15 +13,7 @@ public class HeroView extends StackPane{
 	private Shape shape;
 	private Polygon triangle;
 	private Hero hero;
-	
-	public HeroView(Hero h){
-		relocate(h.getLocationX() * Controller.TILE_SIZE , h.getLocationY() * Controller.TILE_SIZE);
-		drawShape(h.getPlayerType());
-		this.hero = h;
-	}
-	
-	
-	
+
 	public HeroView(int x, int y, PlayerType p, RoleType r){
 		relocate(x * Controller.TILE_SIZE, y * Controller.TILE_SIZE);
 		drawShape(p);

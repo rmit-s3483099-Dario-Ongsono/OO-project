@@ -37,8 +37,7 @@ public class Controller {
 		tileArray = new TileView[WIDTH][HEIGHT];
 		heroArray = new ArrayList();
 		tileGroup = createTilesView();
-		//heroGroup = createHerosView();
-		createHeroModel();
+		heroGroup = createHerosView();
 		gameBoard = new Board(TILE_SIZE, WIDTH, HEIGHT, tileGroup, heroGroup);
 
 	}
@@ -65,14 +64,9 @@ public class Controller {
 	/*****test code for MVC******/
 
 	public void createHeroModel(){
-		heroGroup = new Group();
 		Hero h = new Warrior(2, 3, PlayerType.BLUE, RoleType.WARRIOR);
-		HeroView hero = new HeroView(h);
 
-		heroArray.add(hero);
-		tileArray[2][3].getTile().setHero(h);
-		addHeroEvents(hero);
-		heroGroup.getChildren().add(hero);
+
 	}
 
 	/*************/
@@ -152,7 +146,7 @@ public class Controller {
 	}
 
 
-/***************need to fix the point from hero view to hero model****************/
+
 	private void addTileEvents(TileView tileView){
 		tileView.setOnMouseClicked(e ->{
 			HeroView selectedHero = findSelectedHero(heroArray);
@@ -174,7 +168,7 @@ public class Controller {
 
 
 
-	/***************need fix the point of hero from hero view to hero model*********************/
+
 	private HeroView findSelectedHero(ArrayList<HeroView> heroArray){
 		HeroView selectedHero;
 		for(int i = 0; i < heroArray.size(); i++){

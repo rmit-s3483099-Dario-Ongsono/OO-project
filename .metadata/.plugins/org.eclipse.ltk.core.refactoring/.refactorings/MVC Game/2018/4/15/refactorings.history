@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;gameController.gameInit&apos; to &apos;GameInit&apos;&#x0D;&#x0A;- Original project: &apos;MVC Game&apos;&#x0D;&#x0A;- Original element: &apos;gameController.gameInit&apos;&#x0D;&#x0A;- Renamed element: &apos;gameController.GameInit&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;gameInit&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;gameController{gameInit.java[gameInit" matchStrategy="1" name="GameInit" qualified="false" references="true" similarDeclarations="false" stamp="1523265041960" textual="false" version="1.0"/>
+</session>
