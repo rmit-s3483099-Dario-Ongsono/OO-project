@@ -31,24 +31,18 @@ public class ValidTileDetector {
 
 	private void showDiagonalLine(int x, int y, int d) {
 
-		if(x - d >= 0 && y + d < Controller.HEIGHT){
-			tileArray[x - d][y + d].setFill(Color.GREEN);
-			tileArray[x - d][y + d].getTile().setReady(true);
-		}
-
-		if(x - d >= 0 && y - d >= 0){
+		if(x - d >= 0 && x + d <= Controller.WIDTH || y - d >= 0 && y + d <= Controller.HEIGHT){
 			tileArray[x - d][y - d].setFill(Color.GREEN);
 			tileArray[x - d][y - d].getTile().setReady(true);
-		}
 
-		if(x + d < Controller.WIDTH && y - d >= 0){
 			tileArray[x + d][y - d].setFill(Color.GREEN);
 			tileArray[x + d][y - d].getTile().setReady(true);
-		}
 
-		if(x + d < Controller.WIDTH && y + d < Controller.HEIGHT){
 			tileArray[x + d][y + d].setFill(Color.GREEN);
 			tileArray[x + d][y + d].getTile().setReady(true);
+
+			tileArray[x - d][y + d].setFill(Color.GREEN);
+			tileArray[x - d][y + d].getTile().setReady(true);
 		}
 	}
 
@@ -63,13 +57,13 @@ public class ValidTileDetector {
 			tileArray[x][y - s].setFill(Color.GREEN);
 			tileArray[x][y - s].getTile().setReady(true);
 		}
-		if(x + s < Controller.WIDTH){
+		if(x + s <= Controller.WIDTH){
 			tileArray[x + s][y].setFill(Color.GREEN);
 			tileArray[x + s][y].getTile().setReady(true);
 
 		}
 
-		if(y + s < Controller.HEIGHT){
+		if(y + s <= Controller.HEIGHT){
 			tileArray[x][y + s].setFill(Color.GREEN);
 			tileArray[x][y + s].getTile().setReady(true);
 		}

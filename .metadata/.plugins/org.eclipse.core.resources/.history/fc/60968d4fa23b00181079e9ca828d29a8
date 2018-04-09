@@ -35,7 +35,7 @@ public class Controller {
 
 	public Controller(){
 		tileArray = new TileView[WIDTH][HEIGHT];
-		heroArray = new ArrayList();
+		heroArray = new HeroView[HERO_NUM];
 		tileGroup = createTilesView();
 		heroGroup = createHerosView();
 		gameBoard = new Board(TILE_SIZE, WIDTH, HEIGHT, tileGroup, heroGroup);
