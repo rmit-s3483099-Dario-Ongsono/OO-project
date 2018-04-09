@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+<<<<<<< HEAD
+	<section name="ClasspathContainerSelectionPage">
+		<item value="3" key="index"/>
+	</section>
+	<section name="quick_assist_proposal_size">
+	</section>
+	<section name="BuildPathsPropertyPage">
+		<item value="3" key="pageIndex"/>
+	</section>
+=======
 	<section name="RefactoringWizard.preview">
 		<item value="600" key="width"/>
 		<item value="400" key="height"/>
@@ -27,6 +37,7 @@
 	</section>
 	<section name="quick_assist_proposal_size">
 	</section>
+>>>>>>> 14777c47412de2bfbed88359cb18cb9a45b84cc7
 	<section name="completion_proposal_size">
 	</section>
 	<section name="JavaElementSearchActions">
