@@ -1,0 +1,13 @@
+package gameController;
+
+import gameModel.*;
+import gameView.*;
+
+public class gameInit {
+	HeroView hero;
+	Hero h;
+	
+	public gameInit(){
+		
+	}
+}
