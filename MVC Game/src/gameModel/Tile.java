@@ -1,6 +1,7 @@
 package gameModel;
 
 public class Tile {
+
 	private int x;
 	private int y;
 	private int sideSize;
@@ -40,5 +41,7 @@ public class Tile {
 	public int getY(){
 		return y;
 	}
+
+
 
 }

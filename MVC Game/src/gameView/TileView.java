@@ -5,8 +5,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class TileView extends Rectangle{
-
+	
 	private Tile tile;
+
 
 //	public TileView(int x, int y, int tileSize){
 //		super(tileSize, tileSize);
@@ -29,4 +30,8 @@ public class TileView extends Rectangle{
 	public Tile getTile(){
 		return tile;
 	}
+	
+
+	
+	
 }
