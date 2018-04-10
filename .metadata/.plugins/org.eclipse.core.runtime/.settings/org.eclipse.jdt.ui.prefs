@@ -2,7 +2,11 @@
 <<<<<<<=HEAD
 >>>>>>>=14777c47412de2bfbed88359cb18cb9a45b84cc7
 content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="javafx.scene.paint.Paint"><rhs name\="javafx.scene.paint.Color"/></lhs></history>
+<<<<<<< HEAD
 content_assist_number_of_computers=24
+=======
+content_assist_number_of_computers=15
+>>>>>>> d91365d74e2eb43f55c1ca5ae07146f20cca4847
 content_assist_proposals_background=255,255,255
 content_assist_proposals_foreground=0,0,0
 eclipse.preferences.version=1
