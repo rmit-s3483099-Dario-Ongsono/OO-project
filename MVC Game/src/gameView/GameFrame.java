@@ -1,6 +1,6 @@
 package gameView;
 
-import gameController.Controller;
+import gameController.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 public class GameFrame extends Application{
 
- 
+
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		Controller con = new Controller();
@@ -18,7 +18,7 @@ public class GameFrame extends Application{
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
-	
+
 	public static void main (String[] args){
 		launch();
 	}

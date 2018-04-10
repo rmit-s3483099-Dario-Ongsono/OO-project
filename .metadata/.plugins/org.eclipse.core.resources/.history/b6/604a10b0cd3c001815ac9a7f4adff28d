@@ -1,0 +1,6 @@
+package gameModel;
+
+
+public interface Move {
+	void move();
+}
