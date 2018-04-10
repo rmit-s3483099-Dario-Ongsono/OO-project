@@ -1,0 +1,10 @@
+package gameView;
+
+public class TestView {
+	private int x;
+	private int y;
+	
+	public TestView(){
+		
+	}
+}

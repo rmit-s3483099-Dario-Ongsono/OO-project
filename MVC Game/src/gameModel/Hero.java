@@ -1,21 +1,40 @@
 package gameModel;
 
 public abstract class Hero implements Move{
-	private boolean alive;
 	private PlayerType pType;
 	private RoleType rType;
-	private boolean selected;
-	private int locationX, locationY;
+	private int startX;
+	private int startY;
 
-	public Hero(int x, int y, PlayerType p, RoleType r ){
-		this.alive = true;
-		this.pType = p;
-		this.rType = r;
-		this.locationX = x;
-		this.locationY = y;
+	protected int[] validX;
+	protected int[] validY;
+
+	public Hero(){
 
 	}
 
+	public int[] getValidX(){
+		return validX;
+	}
+
+	public int[] getValidY(){
+		return validY;
+	}
+	public void setPlayerType(PlayerType pType) {
+		this.pType = pType;
+	}
+
+	public void setRoleType(RoleType rType) {
+		this.rType = rType;
+	}
+
+	public void setStartX(int startX) {
+		this.startX = startX;
+	}
+
+	public void setStartY(int startY) {
+		this.startY = startY;
+	}
 
 	public PlayerType getPlayerType(){
 		return pType;
@@ -25,35 +44,11 @@ public abstract class Hero implements Move{
 		return rType;
 	}
 
-	public boolean isAlive(){
-		return alive;
+	public int getStartX(){
+		return startX;
 	}
 
-	public void setLife(boolean life){
-		this.alive = life;
-	}
-
-	public int getLocationX(){
-		return locationX;
-	}
-
-	public int getLocationY(){
-		return locationY;
-	}
-
-	public void setLocationX(int x){
-		this.locationX = x;
-	}
-
-	public void setLocationY(int y){
-		this.locationY = y;
-	}
-
-	public void selectHero(boolean select){
-		this.selected = select;
-	}
-
-	public boolean isSelected(){
-		return selected;
+	public int getStartY(){
+		return startY;
 	}
 }

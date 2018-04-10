@@ -1,5 +1,6 @@
 package gameModel;
 
+
 public interface Move {
-	void move(int x, int y);
+	abstract void move(int x, int y);
 }

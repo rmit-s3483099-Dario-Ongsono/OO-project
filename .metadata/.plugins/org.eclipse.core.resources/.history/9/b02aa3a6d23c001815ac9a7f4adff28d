@@ -1,0 +1,37 @@
+package gameView;
+
+import gameModel.Tile;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+
+public class TileView extends Rectangle{
+	private HeroView hero;
+	private boolean ready;
+
+	public TileView(int x, int y, int tileSize){
+		super(tileSize, tileSize);
+		this.relocate(x * tileSize, y * tileSize);
+		this.setFill(Color.valueOf("#feb"));
+		this.setStroke(Color.BLACK);
+	}
+
+
+	public void setHero(HeroView hero){
+		this.hero = hero;
+	}
+
+	public boolean hasHero(){
+		return hero != null;
+	}
+
+	public void setReady(boolean ready){
+		this.ready = ready;
+	}
+
+	public boolean isReady(){
+		return ready;
+	}
+	
+	
+
+}

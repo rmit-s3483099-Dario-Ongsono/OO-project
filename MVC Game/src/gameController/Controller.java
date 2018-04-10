@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import gameModel.*;
 import gameView.*;
+import javafx.event.ActionEvent;
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
 
@@ -41,246 +42,99 @@ public class Controller {
 
 		tileArray = new TileView[WIDTH][HEIGHT];
 		heroArray = new ArrayList();
-		tileGroup = createTilesView();
-		//heroGroup = createHerosView();
-		createHeroModel();
+		tileGroup = createTiles();
+		heroGroup = createHeros();
+
 		gameBoard = new BoardView(board, tileGroup, heroGroup);
 
 	}
 
 
-
-	public Group createTilesView(){
-		Group tileGroup = new Group();
-
+	private Group createTiles(){
+		Group group = new Group();
 		for(int x = 0; x < WIDTH; x++){
 			for(int y = 0; y < HEIGHT; y++){
-				Tile tile = new Tile(board.getTileSize(), x, y);
-				TileView tileView = new TileView(tile);
+				TileView tileView = new TileView(x, y, new Tile(TILE_SIZE).getSideSize());
 
-				addTileEvents(tileView);
+				tileView.setOnMouseClicked(e ->{
+					if(tileView.isReady()){
+						for(int i = 0; i < heroArray.size(); i++){
+							if(heroArray.get(i).isSelected()){
+								heroArray.get(i).move(tileView.getLocX(), tileView.getLocY());
+							}
+						}
+					}
+					clean();
+				});
 
 				tileArray[x][y] = tileView;
 
-				tileGroup.getChildren().add(tileView);
+				group.getChildren().add(tileView);
 			}
 		}
-		return tileGroup;
-	}
-
-	/*****test code for MVC******/
-
-public void createHeroModel(){
-
-
-		heroGroup = new Group();
-		Hero h = new Warrior(0, 0, PlayerType.BLUE, RoleType.WARRIOR);
-		HeroView hero = new HeroView(h);
-
-		heroArray.add(hero);
-		tileArray[0][0].getTile().setHero(h);
-		addHeroEvents(hero);
-		heroGroup.getChildren().add(hero);
-
-
-		h = new Support(1, 1, PlayerType.RED, RoleType.SUPPORT);
-		hero = new HeroView(h);
-
-		heroArray.add(hero);
-		tileArray[1][1].getTile().setHero(h);
-		addHeroEvents(hero);
-		heroGroup.getChildren().add(hero);
-
-		// set the Blue player's minions in the col 0 and the Red Player's minions in the col 11
-//		int LocPlayerB = 0, LocPlayerR = 11;
-//		// for each play need 3 minions
-//		for(int i = 0; i< HEIGHT;i = i++) {
-//			// late change i to random
-//			Hero h1 = null;
-//			Hero h2 = null;
-//			HeroView heroV1 = null;
-//			HeroView heroV2 = null;
-//
-//			if(i == 2) {
-//				 h1 = new Warrior(LocPlayerB, i, PlayerType.BLUE, RoleType.WARRIOR);
-//				 heroV1 = new HeroView(h1);
-//				 h2 = new Warrior(LocPlayerR, i, PlayerType.RED, RoleType.WARRIOR);
-//				 heroV2 = new HeroView(h2);
-//			}
-//
-//			if(i == 5) {
-//				h1 = new Support(LocPlayerB, i, PlayerType.BLUE, RoleType.SUPPORT);
-//				heroV1 = new HeroView(h1);
-//				h2 = new Support(LocPlayerR, i, PlayerType.RED, RoleType.SUPPORT);
-//				heroV2 = new HeroView(h2);
-//			}
-//
-//			if(i == 8) {
-//				h1 = new Gunner(LocPlayerB, i, PlayerType.BLUE, RoleType.GUNNER);
-//				heroV1 = new HeroView(h1);
-//				h2 = new Gunner(LocPlayerR, i, PlayerType.RED, RoleType.GUNNER);
-//				heroV2 = new HeroView(h2);
-//			}
-//
-//			if(h1 != null && h2 != null) {
-//				if(h1.getPlayerType() == PlayerType.BLUE)
-//					tileArray[LocPlayerB][i].getTile().setHero(h1);
-//				if(h2.getPlayerType() == PlayerType.RED)
-//					tileArray[LocPlayerR][i].getTile().setHero(h2);
-//			}
-//
-//			if(heroV1 != null && heroV2 != null) {
-//				heroArray.add(heroV1);
-//				heroArray.add(heroV2);
-//				addHeroEvents(heroV1);
-//				addHeroEvents(heroV2);
-//				heroGroup.getChildren().add(heroV1);
-//				heroGroup.getChildren().add(heroV2);
-//			}
-//
-//		}
-
-	}
-
-	/*************/
-
-
-
-//	public Group createHerosView(){
-//		int redY = 1;
-//		int blueY = HEIGHT - 1;
-//		Group heroGroup = new Group();
-//		HeroView hero;
-//
-//
-//
-//		hero = new HeroView(2, blueY, PlayerType.BLUE, RoleType.WARRIOR);
-//		heroArray.add(hero);
-//		tileArray[2][blueY].getTile().setHero(hero.getHero()); //may change hero.getHero() to heroView
-//		addHeroEvents(hero);
-//		heroGroup.getChildren().add(hero);
-//
-//
-//		hero = new HeroView(5, blueY, PlayerType.BLUE, RoleType.SUPPORT);
-//		heroArray.add(hero);
-//		tileArray[5][blueY].getTile().setHero(hero.getHero()); //may change hero.getHero() to heroView
-//		addHeroEvents(hero);
-//		heroGroup.getChildren().add(hero);
-//
-//
-//
-//		hero = new HeroView(7, blueY, PlayerType.BLUE, RoleType.GUNNER);
-//		heroArray.add(hero);
-//		tileArray[7][blueY].getTile().setHero(hero.getHero()); //may change hero.getHero() to heroView
-//		addHeroEvents(hero);
-//		heroGroup.getChildren().add(hero);
-//
-//		hero = new HeroView(2, redY, PlayerType.RED, RoleType.WARRIOR);
-//		heroArray.add(hero);
-//		tileArray[2][redY].getTile().setHero(hero.getHero()); //may change hero.getHero() to heroView
-//		addHeroEvents(hero);
-//		heroGroup.getChildren().add(hero);
-//
-//
-//		hero = new HeroView(5, redY, PlayerType.RED, RoleType.SUPPORT);
-//		heroArray.add(hero);
-//		tileArray[5][redY].getTile().setHero(hero.getHero()); //may change hero.getHero() to heroView
-//		addHeroEvents(hero);
-//		heroGroup.getChildren().add(hero);
-//
-//
-//		hero = new HeroView(7, redY, PlayerType.RED, RoleType.GUNNER);
-//		heroArray.add(hero);
-//		tileArray[7][redY].getTile().setHero(hero.getHero()); //may change hero.getHero() to heroView
-//		addHeroEvents(hero);
-//		heroGroup.getChildren().add(hero);
-//
-//		return heroGroup;
-//	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	private void addHeroEvents(HeroView hero){
-		hero.setOnMousePressed(e ->{
-			System.out.println("i am hero" + hero.getHero().getRoleType());
-			hero.pressed(); // change stroke color to white and turn boolean select to true
-			ValidTileDetector validTile = new ValidTileDetector(tileArray, hero);
-		});
+		return group;
 	}
 
 
-/***************need to fix the point from hero view to hero model****************/
-	private void addTileEvents(TileView tileView){
-		tileView.setOnMouseClicked(e ->{
-			//HeroView selectedHero = findSelectedHero1(heroArray);
-			System.out.println("i am tile" + tileView.getTile().getX() + " " + tileView.getTile().getY());
-			Hero selectedHero = findSelectedHero(heroArray);
-			if(tileView.getTile().isReady()){
-				int x = tileView.getTile().getX();
-				int y = tileView.getTile().getY();
-				int oldx = selectedHero.getLocationX();
-				int oldy = selectedHero.getLocationY();
-				selectedHero.setLocationX(x);
-				selectedHero.setLocationY(y);
-				//selectedHero.move();
-				System.out.println("CurSelected" + curSelected);
-				heroArray.get(curSelected).move();
-				tileView.getTile().setHero(selectedHero);
-				tileArray[oldx][oldy].getTile().setHero(null);
-				tileClean();
+
+	private Group createHeros(){
+		Group group = new Group();
+
+		Hero h = new Warrior(WIDTH, HEIGHT);
+
+		int x = h.getStartX();
+		int y = h.getStartY();
+
+		HeroView h1 = new HeroView(x, y, PlayerType.BLUE, h.getRoleType());
+		heroArray.add(h1);
+		tileArray[x][y].setHero(h1);
+
+		h1.setOnMouseClicked(e ->{
+			h.move(h1.getLocX(), h1.getLocY());
+
+			for(int i = 0; i < h.getValidX().length; i++){
+				showValidTiles(tileArray, h.getValidX()[i], h.getValidY()[i]);
 			}
+
 		});
+
+
+		Hero sss = new Support();
+
+		int sx = sss.getStartX();
+		int sy = sss.getStartY();
+
+		HeroView h2 = new HeroView(sx, sy, PlayerType.RED, sss.getRoleType());
+		heroArray.add(h2);
+		tileArray[sx][sy].setHero(h2);
+
+		h2.setOnMouseClicked(e ->{
+			sss.move(h2.getLocX(), h2.getLocY());
+		});
+
+
+		group.getChildren().add(h1);
+		group.getChildren().add(h2);
+
+		return group;
 	}
 
+	private void showValidTiles(TileView[][] tile, int x, int y){
+		tile[x][y].setFill(Color.GREEN);
+		tile[x][y].setReady(true);
+	}
 
+	private void clean(){
+		for(int x = 0; x < WIDTH; x++){
+			for(int y = 0; y < HEIGHT; y++){
+				tileArray[x][y].setDefault();
+			}
+		}
 
-	private Hero findSelectedHero(ArrayList<HeroView> heroArray){
-		Hero selectedHero;
 		for(int i = 0; i < heroArray.size(); i++){
-			if(heroArray.get(i).getHero().isSelected()){
-				curSelected = i;
-				return selectedHero = heroArray.get(i).getHero();
-
-			}
-		}
-		return selectedHero = null;
-	}
-
-
-//	/***************need fix the point of hero from hero view to hero model*********************/
-//	private HeroView findSelectedHero1(ArrayList<HeroView> heroArray){
-//		HeroView selectedHero;
-//		for(int i = 0; i < heroArray.size(); i++){
-//			if(heroArray.get(i).getHero().isSelected()){
-//				curSelected = i;
-//				return selectedHero = heroArray.get(i);
-//			}
-//		}
-//		return selectedHero = null;
-//	}
-
-
-
-	private void tileClean(){
-		for(int i = 0; i < WIDTH; i++){
-			for(int j = 0; j < HEIGHT; j++){
-				tileArray[i][j].getTile().setReady(false);
-				tileArray[i][j].setFill(Color.valueOf("#feb"));
-			}
+			heroArray.get(i).setDefault();
 		}
 	}
-
 
 
 	public BoardView getGameBoard(){

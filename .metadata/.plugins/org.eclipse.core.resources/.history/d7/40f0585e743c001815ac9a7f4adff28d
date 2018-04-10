@@ -1,0 +1,23 @@
+package gameModel;
+
+import gameController.ValidTileDetector;
+
+public class TestModel extends Hero{
+
+	 ValidTileDetector validTileDetector = new ValidTileDetector();
+
+
+	public TestModel(int x, int y, PlayerType p, RoleType r) {
+		super(x, y, p, r);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void move(int x, int y) {
+		validTileDetector.
+
+	}
+
+
+
+}

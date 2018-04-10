@@ -1,0 +1,88 @@
+package gameController;
+
+
+
+import java.util.ArrayList;
+
+import gameModel.*;
+import gameView.*;
+import javafx.scene.Group;
+import javafx.scene.paint.Color;
+
+public class Controller {
+	private BoardView gameBoard;
+	private TileView tileView;
+	private Group tileGroup;
+	private Group heroGroup;
+	private TileView[][] tileArray;
+	private ArrayList<HeroView> heroArray;
+	private Board board;
+
+	private int curSelected;
+
+	public static final int TILE_SIZE = 50; //This should be in Model package in Board class, - Dario
+										   //gameView package should have BoardView class instead - Dario
+
+	public static final int WIDTH = 12;   //this too - Dario
+	public static final int HEIGHT = 14;  //this too - Dario
+
+	//private static final int HERO_NUM = 6; //This variable maybe should be in a class of its own (maybe) - Dario
+
+//	Overall comment for above variables:
+//
+//		these variables should be inside the model package because the controller
+//		package shouldn't need to know how big of a board size it needs to make or
+//		how many number of heroes the board would have
+//
+
+
+	public Controller(){
+		board = new Board(TILE_SIZE, WIDTH, HEIGHT);
+
+		tileArray = new TileView[WIDTH][HEIGHT];
+		heroArray = new ArrayList();
+		tileGroup = createTiles();
+		heroGroup = createHeros();
+
+		gameBoard = new BoardView(board, tileGroup, heroGroup);
+
+	}
+
+
+	private Group createTiles(){
+		Group group = new Group();
+		for(int x = 0; x < WIDTH; x++){
+			for(int y = 0; y < HEIGHT; y++){
+				TileView tileView = new TileView(x, y, new Tile(TILE_SIZE).getSideSize());
+
+				tileArray[x][y] = tileView;
+
+				group.getChildren().add(tileView);
+			}
+		}
+		return group;
+	}
+
+	private Group createHeros(){
+		Group group = new Group();
+		return group;
+	}
+
+
+
+//	private void tileClean(){
+//		for(int i = 0; i < WIDTH; i++){
+//			for(int j = 0; j < HEIGHT; j++){
+//				tileArray[i][j].getTile().setReady(false);
+//				tileArray[i][j].setFill(Color.valueOf("#feb"));
+//			}
+//		}
+//	}
+
+
+
+	public BoardView getGameBoard(){
+		return gameBoard;
+	}
+
+}

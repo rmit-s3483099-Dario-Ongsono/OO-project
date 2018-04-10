@@ -1,0 +1,30 @@
+package gameModel;
+
+
+public class Warrior extends Hero implements Capture{
+
+	public Warrior() {
+		super.setStartX(1);
+		super.setStartY(0);
+
+		super.setRoleType(RoleType.WARRIOR);
+	}
+
+	@Override
+	public void capture() {
+
+	}
+
+
+	@Override
+	public void move(int curX, int curY) {
+
+	}
+
+	@Override
+	public void move() {
+		System.out.print("i am warrior");
+
+	}
+
+}
