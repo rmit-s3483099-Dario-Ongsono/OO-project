@@ -13,6 +13,7 @@ public class GameFrame extends Application{
 	public void start(Stage primaryStage) throws Exception {
 		Controller con = new Controller();
 
+		//TestController con = new TestController();
 		Scene scene = new Scene(con.getGameBoard().displayBoard());
 		primaryStage.setTitle("Panda Game");
 		primaryStage.setScene(scene);

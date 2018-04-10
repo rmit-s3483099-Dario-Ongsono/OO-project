@@ -85,7 +85,7 @@ public class Controller {
 
 		HeroView h1 = new HeroView(x, y, PlayerType.BLUE, h.getRoleType());
 		heroArray.add(h1);
-		//tileArray[x][y].setHero(h1);
+		tileArray[x][y].setHero(h1);
 
 		h1.setOnMouseClicked(e ->{
 			h.move(h1.getLocX(), h1.getLocY());
@@ -104,7 +104,7 @@ public class Controller {
 
 		HeroView h2 = new HeroView(sx, sy, PlayerType.RED, sss.getRoleType());
 		heroArray.add(h2);
-		//tileArray[sx][sy].setHero(h2);
+		tileArray[sx][sy].setHero(h2);
 
 		h2.setOnMouseClicked(e ->{
 			sss.move(h2.getLocX(), h2.getLocY());
