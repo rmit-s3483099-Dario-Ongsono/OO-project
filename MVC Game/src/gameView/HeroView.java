@@ -11,24 +11,26 @@ import javafx.scene.shape.Shape;
 
 public class HeroView extends StackPane{
 	private Shape shape;
-//	private Polygon triangle;
 
-	private Hero hero;
+	private int x;
+	private int y;
+	private boolean alive;
+	private boolean selected;
 
-	public HeroView(Hero h){
-		relocate(h.getLocationX() * Controller.TILE_SIZE , h.getLocationY() * Controller.TILE_SIZE);
-		drawShape(h.getPlayerType());
-		this.hero = h;
+	public HeroView(int x, int y, PlayerType p, RoleType r){
+		relocate(x * Controller.TILE_SIZE, y * Controller.TILE_SIZE);
+		this.x = x;
+		this.y = y;
+		drawShape(p);
+		this.alive = true;
+
+		this.setOnMousePressed(e ->{
+			shape.setStroke(Color.WHITE);
+			this.selected = true;
+
+		});
+
 	}
-
-
-
-//	public HeroView(int x, int y, PlayerType p, RoleType r){
-//		relocate(x * Controller.TILE_SIZE, y * Controller.TILE_SIZE);
-//		drawShape(p);
-//
-//		createHero(x, y, p, r);
-//	}
 
 
 	private void drawShape(PlayerType p){
@@ -45,29 +47,36 @@ public class HeroView extends StackPane{
 	}
 
 
-//	private void createHero(int x, int y, PlayerType p, RoleType r){
-//		if(r == RoleType.WARRIOR)
-//			hero = new Warrior(x, y, p, r);
-//		else if(r == RoleType.GUNNER)
-//			hero = new Warrior(x, y, p, r)
-//			; //TODO
-//		else
-//			hero = new Warrior(x, y, p, r)
-//			; //TODO
-//	}
 
-	public Hero getHero(){
-		return hero;
+	public void move(int x, int y){
+		this.x = x;
+		this.y = y;
+		this.relocate(x * Controller.TILE_SIZE , y * Controller.TILE_SIZE );
+
 	}
 
-	public void pressed(){
-		shape.setStroke(Color.WHITE);
-		hero.selectHero(true);
+	public boolean isSelected(){
+		return selected;
 	}
 
-	public void move(){
-		this.relocate(hero.getLocationX() * Controller.TILE_SIZE , hero.getLocationY() * Controller.TILE_SIZE);
-		hero.selectHero(false);
+	public void setDefault(){
 		shape.setStroke(Color.BLACK);
+		this.selected = false;
+	}
+
+	public void setlife(boolean life){
+		this.alive = life;
+	}
+
+	public boolean isAlive(){
+		return alive;
+	}
+
+	public int getLocX(){
+		return x;
+	}
+
+	public int getLocY(){
+		return y;
 	}
 }

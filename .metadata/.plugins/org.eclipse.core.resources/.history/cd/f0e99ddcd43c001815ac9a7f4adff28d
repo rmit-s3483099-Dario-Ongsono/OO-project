@@ -1,0 +1,19 @@
+package gameModel;
+
+public class Tile {
+	private int sideSize;
+
+
+	public Tile(int size){
+		this.sideSize = size;
+	}
+
+	public int getSideSize(){
+		return sideSize;
+	}
+
+	public void highLight(int curX, int curY, RoleType r){
+
+	}
+
+}

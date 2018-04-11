@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <dirs>
-<entry loc="C:\Program Files\Java\jre1.8.0_161" stamp="1521423650421"/>
+<<<<<<< HEAD
+<entry loc="C:\Program Files\Java\jdk" stamp="1501076222938"/>
+=======
+<entry loc="C:\Program Files\Java\jre1.8.0_161" stamp="1521852070665"/>
+>>>>>>> 35a7e2c5f9cf314f0644fb848891d84813a1bc36
 </dirs>

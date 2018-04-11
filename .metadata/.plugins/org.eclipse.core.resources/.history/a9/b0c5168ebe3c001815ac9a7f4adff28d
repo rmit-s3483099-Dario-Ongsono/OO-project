@@ -1,0 +1,25 @@
+package gameModel;
+
+import gameController.ValidTileDetector;
+
+public class Warrior extends Hero implements Capture{
+
+	public Warrior() {
+		super.setStartX(1);
+		super.setStartY(0);
+
+		super.setRoleType(RoleType.WARRIOR);
+	}
+
+	@Override
+	public void capture() {
+
+	}
+
+	@Override
+	public void move(int x, int y, ValidTileDetector d) {
+
+
+	}
+
+}

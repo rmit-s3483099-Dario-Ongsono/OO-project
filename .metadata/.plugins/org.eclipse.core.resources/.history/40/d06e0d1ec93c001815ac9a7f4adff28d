@@ -1,0 +1,26 @@
+package gameModel;
+
+public class Support extends Hero implements Revive{
+
+	public Support() {
+		super.setStartX(3);
+		super.setStartY(3);
+
+		super.setRoleType(RoleType.SUPPORT);
+	}
+
+	@Override
+	public void move() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void revive() {
+		// TODO Auto-generated method stub
+
+	}
+
+
+
+}

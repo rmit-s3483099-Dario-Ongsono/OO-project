@@ -1,0 +1,23 @@
+package gameModel;
+
+import gameController.ValidTileDetector;
+
+public class Warrior extends Hero implements Capture{
+
+	public Warrior() {
+
+
+	}
+
+	@Override
+	public void capture() {
+
+	}
+
+	@Override
+	public void move(int x, int y, ValidTileDetector d) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

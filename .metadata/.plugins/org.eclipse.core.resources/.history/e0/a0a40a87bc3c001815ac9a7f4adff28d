@@ -1,0 +1,36 @@
+package gameModel;
+
+public abstract class Hero implements Move{
+	private PlayerType pType;
+	private RoleType rType;
+	private int startX;
+	private int startY;
+
+	public Hero(){
+
+	}
+
+	public PlayerType getPlayerType(){
+		return pType;
+	}
+
+	public RoleType getRoleType(){
+		return rType;
+	}
+
+	public boolean isAlive(){
+		return alive;
+	}
+
+	public void setLife(boolean life){
+		this.alive = life;
+	}
+
+	public int getStartX(){
+		return startX;
+	}
+
+	public int getStartY(){
+		return startY;
+	}
+}
