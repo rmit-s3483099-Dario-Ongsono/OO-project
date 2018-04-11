@@ -17,15 +17,15 @@ public class Controller {
 	private TileView[][] tileArray;
 	private ArrayList<HeroView> heroArray;
 	private Board board;
-
+	
 
 	private int TILE_SIZE;
 	private int WIDTH;
 	private int HEIGHT;
 	private TileGenerator tilegenerator;
 	private HeroGenerator heroGenerator;
-
-
+	
+	
 //	Overall comment for above variables:
 //		these variables should be inside the model package because the controller
 //		package shouldn't need to know how big of a board size it needs to make or
@@ -40,9 +40,9 @@ public class Controller {
 
 		tilegenerator = new TileGenerator(WIDTH, HEIGHT, TILE_SIZE);
 		heroGenerator = new HeroGenerator(WIDTH, HEIGHT, TILE_SIZE);
-
+		
 		tileArray = new TileView[WIDTH][HEIGHT];
-		heroArray = new ArrayList();
+//		heroArray = new ArrayList();
 //		tileGroup = createTiles();
 		tileGroup = tilegenerator.createTiles(heroArray, tileArray);
 		heroGroup = heroGenerator.createHeros(heroArray, tileArray);
