@@ -1,5 +1,7 @@
 package gameController;
-
+/**
+ * 
+ */
 import java.util.ArrayList;
 
 import gameModel.Hero;
@@ -30,6 +32,7 @@ public class HeroGenerator {
 	public Group createHeros(ArrayList<HeroView> heroArray,TileView[][] tileArray){
 		Group group = new Group();
 		ArrayList<Hero> r = new ArrayList<Hero>();
+		// list add new warrior that with plyaerType
 		r.add(new Warrior(width, height, PlayerType.BLUE));
 		r.add(new Warrior(width, height, PlayerType.RED));
 
@@ -38,17 +41,20 @@ public class HeroGenerator {
 
 		r.add(new Ranger(width, height, PlayerType.BLUE));
 		r.add(new Ranger(width, height, PlayerType.RED));
-
+		
 		for(Hero a : r){
 			HeroView heroView = new HeroView(a.getStartX(), a.getStartY(),a.getPlayerType(), a.getRoleType(), tilesize);
 			heroArray.add(heroView);
 
-
+			// TODO 11/04/2018 17:45 
+			// bug is here, when select piece is for each hero in the hero list
+			// that's mean 6 pieces can move in one time
 
 			heroView.setOnMouseClicked(e ->{
 				a.move(heroView.getLocX(), heroView.getLocY());
 
 				for(int i = 0; i < a.getValidX().length; i++){
+					// find all the valid tiles of the selected piece 
 					showValidTiles(tileArray, a.getValidX()[i], a.getValidY()[i]);
 				}
 			});
@@ -59,7 +65,6 @@ public class HeroGenerator {
 	}
 	
 	private void showValidTiles(TileView[][] tile, int x, int y){
-		tile[x][y].setFill(Color.GREEN);
-		tile[x][y].setReady(true);
+		tile[x][y].changeColor(); // call the method that change the special tiles.
 	}
 }
