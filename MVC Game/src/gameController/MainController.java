@@ -15,13 +15,15 @@ public class MainController {
 	private TileView[][] tileArray;
 	private ArrayList<HeroView> heroArray;
 	private Board board;
-
+	private int turns;
 
 	private int TILE_SIZE;
 	private int WIDTH;
 	private int HEIGHT;
 	private TileGenerator tilegenerator;
 	private HeroGenerator heroGenerator;
+
+	private static int count;
 
 	public MainController(){
 		board = new Board();
@@ -34,7 +36,7 @@ public class MainController {
 		heroGenerator = new HeroGenerator(WIDTH, HEIGHT, TILE_SIZE);
 
 		tileArray = new TileView[WIDTH][HEIGHT];
-		heroArray = new ArrayList();
+		heroArray = new ArrayList<HeroView>();
 
 		tileGroup = tilegenerator.createTiles(heroArray, tileArray);
 		heroGroup = heroGenerator.createHeros(heroArray, tileArray);
