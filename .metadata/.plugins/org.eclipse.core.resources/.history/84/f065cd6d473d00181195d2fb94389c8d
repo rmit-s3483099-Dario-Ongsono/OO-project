@@ -40,14 +40,14 @@ public class Controller {
 		tileArray = new TileView[WIDTH][HEIGHT];
 		heroArray = new ArrayList();
 //		tileGroup = createTiles();
-		tileGroup = tilegenerator.createTiles(heroArray, tileArray);
+		tileGroup = tile
 		heroGroup = createHeros();
 
 		gameBoard = new BoardView(board.getWidth(), board.getHeight(), board.getTileSize(), tileGroup, heroGroup);
 
 	}
 
-/*********************************no delete******************************/
+
 //	private Group createTiles(){
 //		Group group = new Group();
 //		for(int x = 0; x < WIDTH; x++){
@@ -72,7 +72,7 @@ public class Controller {
 //		}
 //		return group;
 //	}
-	/*********************************no delete******************************/
+
 
 	private Group createHeros(){
 		Group group = new Group();
@@ -114,7 +114,6 @@ public class Controller {
 		tile[x][y].setReady(true);
 	}
 
-	/*********************************no delete******************************/
 //	private void clean(){
 //		for(int x = 0; x < WIDTH; x++){
 //			for(int y = 0; y < HEIGHT; y++){
@@ -126,7 +125,7 @@ public class Controller {
 //			heroArray.get(i).setDefault();
 //		}
 //	}
-	/*********************************no delete******************************/
+
 
 	public BoardView getGameBoard(){
 		return gameBoard;

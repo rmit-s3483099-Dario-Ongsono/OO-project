@@ -19,60 +19,62 @@ public class Controller {
 	private Board board;
 
 
-	private int TILE_SIZE;
-	private int WIDTH;
-	private int HEIGHT;
-	private TileGenerator tilegenerator;
+	private int TILE_SIZE; //This should be in Model package in Board class, - Dario
+										   //gameView package should have BoardView class instead - Dario
+
+	private int WIDTH;   //this too - Dario
+	private int HEIGHT;  //this too - Dario
+
+	//private static final int HERO_NUM = 6; //This variable maybe should be in a class of its own (maybe) - Dario
 
 //	Overall comment for above variables:
+//
 //		these variables should be inside the model package because the controller
 //		package shouldn't need to know how big of a board size it needs to make or
 //		how many number of heroes the board would have
+//
+
 
 	public Controller(){
 		board = new Board();
-
 		TILE_SIZE = board.getTileSize();
 		WIDTH = board.getWidth();
 		HEIGHT = board.getHeight();
-
-		tilegenerator = new TileGenerator(WIDTH, HEIGHT, TILE_SIZE);
 		tileArray = new TileView[WIDTH][HEIGHT];
 		heroArray = new ArrayList();
-//		tileGroup = createTiles();
-		tileGroup = tilegenerator.createTiles(heroArray, tileArray);
+		tileGroup = createTiles();
 		heroGroup = createHeros();
 
 		gameBoard = new BoardView(board.getWidth(), board.getHeight(), board.getTileSize(), tileGroup, heroGroup);
 
 	}
 
-/*********************************no delete******************************/
-//	private Group createTiles(){
-//		Group group = new Group();
-//		for(int x = 0; x < WIDTH; x++){
-//			for(int y = 0; y < HEIGHT; y++){
-//				TileView tileView = new TileView(x, y, new Tile(TILE_SIZE).getSideSize());
-//
-//				tileView.setOnMouseClicked(e ->{
-//					if(tileView.isReady()){
-//						for(int i = 0; i < heroArray.size(); i++){
-//							if(heroArray.get(i).isSelected()){
-//								heroArray.get(i).move(tileView.getLocX(), tileView.getLocY());
-//							}
-//						}
-//					}
-//					clean();
-//				});
-//
-//				tileArray[x][y] = tileView;
-//
-//				group.getChildren().add(tileView);
-//			}
-//		}
-//		return group;
-//	}
-	/*********************************no delete******************************/
+
+	private Group createTiles(){
+		Group group = new Group();
+		for(int x = 0; x < WIDTH; x++){
+			for(int y = 0; y < HEIGHT; y++){
+				TileView tileView = new TileView(x, y, new Tile(TILE_SIZE).getSideSize());
+
+				tileView.setOnMouseClicked(e ->{
+					if(tileView.isReady()){
+						for(int i = 0; i < heroArray.size(); i++){
+							if(heroArray.get(i).isSelected()){
+								heroArray.get(i).move(tileView.getLocX(), tileView.getLocY());
+							}
+						}
+					}
+					clean();
+				});
+
+				tileArray[x][y] = tileView;
+
+				group.getChildren().add(tileView);
+			}
+		}
+		return group;
+	}
+
 
 	private Group createHeros(){
 		Group group = new Group();
@@ -114,19 +116,18 @@ public class Controller {
 		tile[x][y].setReady(true);
 	}
 
-	/*********************************no delete******************************/
-//	private void clean(){
-//		for(int x = 0; x < WIDTH; x++){
-//			for(int y = 0; y < HEIGHT; y++){
-//				tileArray[x][y].setDefault();
-//			}
-//		}
-//
-//		for(int i = 0; i < heroArray.size(); i++){
-//			heroArray.get(i).setDefault();
-//		}
-//	}
-	/*********************************no delete******************************/
+	private void clean(){
+		for(int x = 0; x < WIDTH; x++){
+			for(int y = 0; y < HEIGHT; y++){
+				tileArray[x][y].setDefault();
+			}
+		}
+
+		for(int i = 0; i < heroArray.size(); i++){
+			heroArray.get(i).setDefault();
+		}
+	}
+
 
 	public BoardView getGameBoard(){
 		return gameBoard;
