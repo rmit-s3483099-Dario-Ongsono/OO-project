@@ -6,12 +6,29 @@ public class Warrior extends Hero implements Capture{
 	private int width;
 	private int height;
 
-
+<<<<<<< HEAD
 	public Warrior(int w, int h, PlayerType p) {
 		super.setStartX((p == PlayerType.BLUE ? 0 : w - 1));
 		super.setStartY(3);
 		super.setRoleType(RoleType.WARRIOR);
 		super.setPlayerType(p);
+=======
+<<<<<<< HEAD
+	public final int SMOVE; //Straight Line move
+	public final int DMOVE; //Diagonal Line move 
+	
+	public Warrior(int x, int y, PlayerType p, RoleType r) {
+		super(x, y, p, r);
+		SMOVE = 1;
+		DMOVE = 0;
+=======
+	public Warrior(int width, int heigh) {
+		super.setStartX(1);
+		super.setStartY(0);
+		super.setRoleType(RoleType.WARRIOR);
+>>>>>>> 63dfb03f5d15102d8fae25b61622d3b435a43cb9
+>>>>>>> 39b141e3f8115f47cb2d6aa67eca5b18aeaad5f5
+
 		this.width = w;
 		this.height = h;
 	}
