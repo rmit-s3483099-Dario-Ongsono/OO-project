@@ -71,12 +71,17 @@ public class HeroGenerator {
 					heroView.selecetedChanges();
 					a.move(heroView.getLocX(), heroView.getLocY());
 
-
+<<<<<<< HEAD
+				for(int i = 0; i < a.getValidX().length; i++){
+					// find all the valid tiles of the selected piece
+					showValidTiles(tileArray, a.getValidX()[i], a.getValidY()[i]);
+=======
 					for(int i = 0; i < a.getValidX().length; i++){
-						// find all the valid tiles of the selected piece
 						showValidTiles(tileArray, a.getValidX()[i], a.getValidY()[i]);
 					}
+>>>>>>> origin/master
 				}
+
 
 			});
 			group.getChildren().add(heroView);
