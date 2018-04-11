@@ -75,7 +75,6 @@ public void createHeroModel(){
 
 		heroGroup = new Group();
 		Hero h = new Warrior(0, 0, PlayerType.BLUE, RoleType.WARRIOR);
-		
 		HeroView hero = new HeroView(h);
 
 		heroArray.add(hero);

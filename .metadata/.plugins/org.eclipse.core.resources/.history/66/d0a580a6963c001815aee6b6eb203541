@@ -24,8 +24,6 @@ public class TileView extends Rectangle{
 		this.setFill(Color.valueOf("#feb"));
 		this.setStroke(Color.BLACK);
 	}
-	
-	
 
 
 	public Tile getTile(){
