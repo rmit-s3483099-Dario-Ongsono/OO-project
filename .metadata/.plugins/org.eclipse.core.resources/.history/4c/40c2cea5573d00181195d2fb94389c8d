@@ -23,7 +23,7 @@ public class TileGenerator {
 	}
 
 
-	public Group createTiles(ArrayList<HeroView> heroArray, TileView[][] tileArray){
+	public Group createTiles(ArrayList<HeroView> heroArray, TileView[][] tileArray, int count){
 		Group group = new Group();
 		for(int x = 0; x < boardWidth; x++){
 			for(int y = 0; y < boardHeight; y++){
@@ -35,8 +35,7 @@ public class TileGenerator {
 							if(heroArray.get(i).isSelected()){
 								heroArray.get(i).move(tileView.getLocX(), tileView.getLocY());
 								TurnChecker t = new TurnChecker();
-								t.count();
-								// *********for future developing, need set method "set HERO" on tileview.*******
+								System.out.print(t.getCount());
 							}
 						}
 					}

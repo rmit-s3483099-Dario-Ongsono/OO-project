@@ -23,8 +23,6 @@ public class MainController {
 	private TileGenerator tilegenerator;
 	private HeroGenerator heroGenerator;
 
-	private static int count;
-
 	public MainController(){
 		board = new Board();
 

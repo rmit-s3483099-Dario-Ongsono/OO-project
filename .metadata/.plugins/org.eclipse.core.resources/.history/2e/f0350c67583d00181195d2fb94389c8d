@@ -35,8 +35,7 @@ public class TileGenerator {
 							if(heroArray.get(i).isSelected()){
 								heroArray.get(i).move(tileView.getLocX(), tileView.getLocY());
 								TurnChecker t = new TurnChecker();
-								t.count();
-								// *********for future developing, need set method "set HERO" on tileview.*******
+								System.out.print(t.getCount());
 							}
 						}
 					}

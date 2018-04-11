@@ -29,10 +29,6 @@ public class TileView extends Rectangle{
 		return hero != null;
 	}
 
-	public HeroView getHero(){
-		return hero;
-	}
-
 	public void setReady(boolean ready){
 		this.ready = ready;
 	}

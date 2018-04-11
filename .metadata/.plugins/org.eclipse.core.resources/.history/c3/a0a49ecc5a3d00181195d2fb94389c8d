@@ -43,31 +43,15 @@ public class HeroGenerator {
 			HeroView heroView = new HeroView(a.getStartX(), a.getStartY(),a.getPlayerType(), a.getRoleType(), tilesize);
 			heroArray.add(heroView);
 
-			tileArray[a.getStartX()][a.getStartY()].setHero(heroView); // ******* for future developing
+			tileArray[a.getStartX()][a.getStartY()].setHero(heroView);
 
-			TurnChecker t = new TurnChecker();
 
 			heroView.setOnMouseClicked(e ->{
-				if(t.isTurn() && a.getPlayerType() == PlayerType.RED){
+				a.move(heroView.getLocX(), heroView.getLocY());
 
-					heroView.selecetedChanges();
-					a.move(heroView.getLocX(), heroView.getLocY());
-
-					for(int i = 0; i < a.getValidX().length; i++){
-						showValidTiles(tileArray, a.getValidX()[i], a.getValidY()[i]);
-					}
+				for(int i = 0; i < a.getValidX().length; i++){
+					showValidTiles(tileArray, a.getValidX()[i], a.getValidY()[i]);
 				}
-
-				if(!t.isTurn() && a.getPlayerType() == PlayerType.BLUE){
-					heroView.selecetedChanges();
-					a.move(heroView.getLocX(), heroView.getLocY());
-
-					for(int i = 0; i < a.getValidX().length; i++){
-						showValidTiles(tileArray, a.getValidX()[i], a.getValidY()[i]);
-					}
-				}
-
-
 			});
 			group.getChildren().add(heroView);
 		}

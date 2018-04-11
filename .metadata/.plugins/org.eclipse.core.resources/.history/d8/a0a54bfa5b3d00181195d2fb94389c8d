@@ -49,8 +49,6 @@ public class HeroGenerator {
 
 			heroView.setOnMouseClicked(e ->{
 				if(t.isTurn() && a.getPlayerType() == PlayerType.RED){
-
-					heroView.selecetedChanges();
 					a.move(heroView.getLocX(), heroView.getLocY());
 
 					for(int i = 0; i < a.getValidX().length; i++){
@@ -59,7 +57,6 @@ public class HeroGenerator {
 				}
 
 				if(!t.isTurn() && a.getPlayerType() == PlayerType.BLUE){
-					heroView.selecetedChanges();
 					a.move(heroView.getLocX(), heroView.getLocY());
 
 					for(int i = 0; i < a.getValidX().length; i++){

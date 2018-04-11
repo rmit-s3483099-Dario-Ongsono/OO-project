@@ -38,7 +38,7 @@ public class MainController {
 		tileArray = new TileView[WIDTH][HEIGHT];
 		heroArray = new ArrayList();
 
-		tileGroup = tilegenerator.createTiles(heroArray, tileArray);
+		tileGroup = tilegenerator.createTiles(heroArray, tileArray, count);
 		heroGroup = heroGenerator.createHeros(heroArray, tileArray);
 
 		gameBoard = new BoardView(board.getWidth(), board.getHeight(), board.getTileSize(), tileGroup, heroGroup);
