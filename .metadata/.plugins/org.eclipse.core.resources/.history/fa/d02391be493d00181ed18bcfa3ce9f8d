@@ -23,7 +23,7 @@ public class Controller {
 	private int WIDTH;
 	private int HEIGHT;
 	private TileGenerator tilegenerator;
-	private HeroGenerator heroGenerator;
+	private HeroGenerator heroGenerator
 	
 	
 //	Overall comment for above variables:
@@ -39,13 +39,12 @@ public class Controller {
 		HEIGHT = board.getHeight();
 
 		tilegenerator = new TileGenerator(WIDTH, HEIGHT, TILE_SIZE);
-		heroGenerator = new HeroGenerator(WIDTH, HEIGHT, TILE_SIZE);
 		
 		tileArray = new TileView[WIDTH][HEIGHT];
-//		heroArray = new ArrayList();
+		heroArray = new ArrayList();
 //		tileGroup = createTiles();
 		tileGroup = tilegenerator.createTiles(heroArray, tileArray);
-		heroGroup = heroGenerator.createHeros(heroArray, tileArray);
+		heroGroup = createHeros();
 
 		gameBoard = new BoardView(board.getWidth(), board.getHeight(), board.getTileSize(), tileGroup, heroGroup);
 

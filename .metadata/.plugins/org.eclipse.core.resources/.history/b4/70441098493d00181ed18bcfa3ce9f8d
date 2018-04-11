@@ -17,15 +17,13 @@ public class Controller {
 	private TileView[][] tileArray;
 	private ArrayList<HeroView> heroArray;
 	private Board board;
-	
+
 
 	private int TILE_SIZE;
 	private int WIDTH;
 	private int HEIGHT;
 	private TileGenerator tilegenerator;
-	private HeroGenerator heroGenerator;
-	
-	
+
 //	Overall comment for above variables:
 //		these variables should be inside the model package because the controller
 //		package shouldn't need to know how big of a board size it needs to make or
@@ -39,13 +37,11 @@ public class Controller {
 		HEIGHT = board.getHeight();
 
 		tilegenerator = new TileGenerator(WIDTH, HEIGHT, TILE_SIZE);
-		heroGenerator = new HeroGenerator(WIDTH, HEIGHT, TILE_SIZE);
-		
 		tileArray = new TileView[WIDTH][HEIGHT];
-//		heroArray = new ArrayList();
+		heroArray = new ArrayList();
 //		tileGroup = createTiles();
 		tileGroup = tilegenerator.createTiles(heroArray, tileArray);
-		heroGroup = heroGenerator.createHeros(heroArray, tileArray);
+		heroGroup = createHeros();
 
 		gameBoard = new BoardView(board.getWidth(), board.getHeight(), board.getTileSize(), tileGroup, heroGroup);
 
@@ -78,45 +74,45 @@ public class Controller {
 //	}
 	/*********************************no delete******************************/
 
-//	private Group createHeros(){
-//		Group group = new Group();
-//		ArrayList<Hero> r = new ArrayList();
-//		r.add(new Warrior(WIDTH, HEIGHT, PlayerType.BLUE));
-//		r.add(new Warrior(WIDTH, HEIGHT, PlayerType.RED));
-//
-//		r.add(new Support(WIDTH, HEIGHT, PlayerType.BLUE));
-//		r.add(new Support(WIDTH, HEIGHT, PlayerType.RED));
-//
-//		r.add(new Ranger(WIDTH, HEIGHT, PlayerType.BLUE));
-//		r.add(new Ranger(WIDTH, HEIGHT, PlayerType.RED));
-//
-//		for(Hero a : r){
-//			HeroView heroView = new HeroView(a.getStartX(), a.getStartY(),a.getPlayerType(), a.getRoleType(), TILE_SIZE);
-//			heroArray.add(heroView);
-//
-//
-//
-//			heroView.setOnMouseClicked(e ->{
-//				a.move(heroView.getLocX(), heroView.getLocY());
-//
-//				for(int i = 0; i < a.getValidX().length; i++){
-//					showValidTiles(tileArray, a.getValidX()[i], a.getValidY()[i]);
-//				}
-//			});
-//			group.getChildren().add(heroView);
-//		}
-//
-//		return group;
-//	}
-//
-//
-//
-//
-//
-//	private void showValidTiles(TileView[][] tile, int x, int y){
-//		tile[x][y].setFill(Color.GREEN);
-//		tile[x][y].setReady(true);
-//	}
+	private Group createHeros(){
+		Group group = new Group();
+		ArrayList<Hero> r = new ArrayList();
+		r.add(new Warrior(WIDTH, HEIGHT, PlayerType.BLUE));
+		r.add(new Warrior(WIDTH, HEIGHT, PlayerType.RED));
+
+		r.add(new Support(WIDTH, HEIGHT, PlayerType.BLUE));
+		r.add(new Support(WIDTH, HEIGHT, PlayerType.RED));
+
+		r.add(new Ranger(WIDTH, HEIGHT, PlayerType.BLUE));
+		r.add(new Ranger(WIDTH, HEIGHT, PlayerType.RED));
+
+		for(Hero a : r){
+			HeroView heroView = new HeroView(a.getStartX(), a.getStartY(),a.getPlayerType(), a.getRoleType(), TILE_SIZE);
+			heroArray.add(heroView);
+
+
+
+			heroView.setOnMouseClicked(e ->{
+				a.move(heroView.getLocX(), heroView.getLocY());
+
+				for(int i = 0; i < a.getValidX().length; i++){
+					showValidTiles(tileArray, a.getValidX()[i], a.getValidY()[i]);
+				}
+			});
+			group.getChildren().add(heroView);
+		}
+
+		return group;
+	}
+
+
+
+
+
+	private void showValidTiles(TileView[][] tile, int x, int y){
+		tile[x][y].setFill(Color.GREEN);
+		tile[x][y].setReady(true);
+	}
 
 	/*********************************no delete******************************/
 //	private void clean(){

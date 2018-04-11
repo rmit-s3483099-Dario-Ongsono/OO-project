@@ -13,10 +13,10 @@ import javafx.scene.Group;
 import javafx.scene.paint.Color;
 
 public class HeroGenerator {
-//	private Group heroGroup;
+	private Group heroGroup;
 	private int width, height, tilesize;
-//	private PlayerType playT;
-//	private HeroView heroView;
+	private PlayerType playT;
+	private HeroView heroView;
 	
 //	private ArrayList<Hero> heros = new ArrayList<Hero>();
 	

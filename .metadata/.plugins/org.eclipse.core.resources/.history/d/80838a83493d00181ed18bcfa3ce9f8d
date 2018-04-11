@@ -10,13 +10,12 @@ import gameModel.Warrior;
 import gameView.HeroView;
 import gameView.TileView;
 import javafx.scene.Group;
-import javafx.scene.paint.Color;
 
 public class HeroGenerator {
-//	private Group heroGroup;
+	private Group heroGroup;
 	private int width, height, tilesize;
-//	private PlayerType playT;
-//	private HeroView heroView;
+	private PlayerType playT;
+	private HeroView heroView;
 	
 //	private ArrayList<Hero> heros = new ArrayList<Hero>();
 	
@@ -27,7 +26,7 @@ public class HeroGenerator {
 		this.tilesize = tilesize;
 //		this.playT = playT;
 	}
-	public Group createHeros(ArrayList<HeroView> heroArray,TileView[][] tileArray){
+	private Group createHeros(ArrayList<HeroView> heroArray,TileView[][] tileArray){
 		Group group = new Group();
 		ArrayList<Hero> r = new ArrayList<Hero>();
 		r.add(new Warrior(width, height, PlayerType.BLUE));
@@ -56,10 +55,5 @@ public class HeroGenerator {
 		}
 
 		return group;
-	}
-	
-	private void showValidTiles(TileView[][] tile, int x, int y){
-		tile[x][y].setFill(Color.GREEN);
-		tile[x][y].setReady(true);
 	}
 }

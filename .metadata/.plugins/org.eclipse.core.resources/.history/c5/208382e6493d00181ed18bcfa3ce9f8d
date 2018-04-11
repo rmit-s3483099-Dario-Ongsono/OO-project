@@ -42,10 +42,10 @@ public class Controller {
 		heroGenerator = new HeroGenerator(WIDTH, HEIGHT, TILE_SIZE);
 		
 		tileArray = new TileView[WIDTH][HEIGHT];
-//		heroArray = new ArrayList();
+		heroArray = new ArrayList();
 //		tileGroup = createTiles();
 		tileGroup = tilegenerator.createTiles(heroArray, tileArray);
-		heroGroup = heroGenerator.createHeros(heroArray, tileArray);
+		heroGroup = createHeros();
 
 		gameBoard = new BoardView(board.getWidth(), board.getHeight(), board.getTileSize(), tileGroup, heroGroup);
 

@@ -1,0 +1,19 @@
+package gameController;
+
+import gameModel.PlayerType;
+import javafx.scene.Group;
+
+public class HeroGenerator {
+	private Group heroGroup;
+	private int width, height;
+	private PlayerType playT;
+	
+	public HeroGenerator(int width, int height, PlayerType playT) {
+		this.width = width;
+		this.height = height;
+		this.playT = playT;
+	}
+	public Group getHeroGroup(){
+		return heroGroup;
+	}
+}
