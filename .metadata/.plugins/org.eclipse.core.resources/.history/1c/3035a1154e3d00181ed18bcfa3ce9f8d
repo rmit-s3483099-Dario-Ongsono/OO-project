@@ -23,8 +23,6 @@ public class MainController {
 	private TileGenerator tilegenerator;
 	private HeroGenerator heroGenerator;
 
-	private static int count;
-
 	public MainController(){
 		board = new Board();
 
@@ -36,7 +34,7 @@ public class MainController {
 		heroGenerator = new HeroGenerator(WIDTH, HEIGHT, TILE_SIZE);
 
 		tileArray = new TileView[WIDTH][HEIGHT];
-		heroArray = new ArrayList<HeroView>();
+		heroArray = new ArrayList();
 
 		tileGroup = tilegenerator.createTiles(heroArray, tileArray);
 		heroGroup = heroGenerator.createHeros(heroArray, tileArray);
