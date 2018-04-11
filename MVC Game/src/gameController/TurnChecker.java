@@ -1,5 +1,15 @@
 package gameController;
 
+/**
+ *
+ * @author 		Jie Yi
+ * @version		1.2
+ * @since		1.0
+ *
+ * Description:
+ *
+ */
+
 public class TurnChecker {
 	private static int count;
 

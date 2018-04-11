@@ -1,0 +1,15 @@
+package bin;
+
+public class TurnCheck {
+	private int turns;
+	
+	public TurnCheck(int turns) {
+		this.turns = turns;
+	}
+	
+	public boolean isYourTurn(int t) {
+		if(t%2 ==0)
+			return true;
+		return false;
+	}
+}

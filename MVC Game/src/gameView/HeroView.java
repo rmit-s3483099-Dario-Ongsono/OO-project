@@ -1,7 +1,6 @@
 package gameView;
 
-import gameController.Controller;
-
+import bin.Controller;
 import gameModel.*;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;

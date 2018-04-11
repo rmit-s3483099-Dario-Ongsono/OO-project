@@ -1,14 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <dirs>
-<<<<<<< HEAD
 <entry loc="C:\Program Files\Java\jre1.8.0_161" stamp="1521852070665"/>
-=======
-<<<<<<< HEAD
-<entry loc="/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home" stamp="1513730643000"/>
-<entry loc="C:\Program Files\Java\jre1.8.0_161" stamp="1521852070665"/>
-<entry loc="/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home" stamp="1466589359000"/>
-=======
-<entry loc="C:\Program Files\Java\jre1.8.0_161" stamp="1521423650421"/>
->>>>>>> origin/master
->>>>>>> db8e031631181b1d4bb67a68a3d1caaeeb6cc3b2
 </dirs>
