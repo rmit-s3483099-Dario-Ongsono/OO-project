@@ -1,0 +1,26 @@
+package gameController;
+
+import java.util.ArrayList;
+
+import gameModel.Hero;
+import gameModel.PlayerType;
+import gameView.HeroView;
+import javafx.scene.Group;
+
+public class HeroGenerator {
+	private Group heroGroup;
+	private int width, height;
+	private PlayerType playT;
+	private HeroView heroView;
+	private ArrayList<Hero> heros = new ArrayList<Hero>();
+	
+	
+	public HeroGenerator(int width, int height) {
+		this.width = width;
+		this.height = height;
+		this.playT = playT;
+	}
+	public Group createHeroGroup(){
+		return heroGroup;
+	}
+}

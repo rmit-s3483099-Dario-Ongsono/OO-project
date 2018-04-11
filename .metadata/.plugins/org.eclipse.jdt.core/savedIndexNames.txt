@@ -7,7 +7,13 @@ INDEX VERSION 1.129+C:\Who cares\.metadata\.plugins\org.eclipse.jdt.core
 2692035760.index
 592600685.index
 315890579.index
+<<<<<<< HEAD
 4232500288.index
+=======
+2956378016.index
+1329257546.index
+1789049621.index
+>>>>>>> ffb1d6c0e2ab5f835d26eb173c4b514bb5c9f026
 2916426105.index
 2577175673.index
 1055679481.index
