@@ -53,6 +53,7 @@ public class ValidTileDetector {
 		}
 	}
 
+
 	private void showStraightLine(int x, int y, int s){
 		if(x - s >= 0){
 			tileArray[x - s][y].setFill(Color.GREEN);

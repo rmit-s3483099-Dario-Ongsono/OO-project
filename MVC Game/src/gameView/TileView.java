@@ -5,6 +5,17 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class TileView extends Rectangle{
+<<<<<<< HEAD
+	
+	private Tile tile;
+
+
+//	public TileView(int x, int y, int tileSize){
+//		super(tileSize, tileSize);
+//		this.relocate(x * tileSize, y * tileSize);
+//		this.setFill(Color.valueOf("#feb"));
+//		this.setStroke(Color.BLACK);
+=======
 	//private HeroView hero;
 	private boolean ready;
 	private int x;
@@ -23,6 +34,7 @@ public class TileView extends Rectangle{
 //	public void setHero(HeroView hero){
 //		this.hero = hero;
 //	}
+>>>>>>> 35a7e2c5f9cf314f0644fb848891d84813a1bc36
 //
 //	public boolean hasHero(){
 //		return hero != null;
@@ -35,6 +47,8 @@ public class TileView extends Rectangle{
 	public boolean isReady(){
 		return ready;
 	}
+	
+	
 
 	public int getLocX(){
 		return x;
@@ -47,4 +61,8 @@ public class TileView extends Rectangle{
 		this.setFill(Color.valueOf("#feb"));
 		this.ready = false;
 	}
+	
+
+	
+	
 }
