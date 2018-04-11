@@ -16,9 +16,10 @@ public class HeroView extends StackPane{
 	private int y;
 	private boolean alive;
 	private boolean selected;
-
-	public HeroView(int x, int y, PlayerType p, RoleType r){
-		relocate(x * Controller.TILE_SIZE, y * Controller.TILE_SIZE);
+	private int size;
+	public HeroView(int x, int y, PlayerType p, RoleType r, int size){
+		relocate(x * size, y * size);
+		this.size = size;
 		this.x = x;
 		this.y = y;
 		drawShape(p);
@@ -34,15 +35,15 @@ public class HeroView extends StackPane{
 
 
 	private void drawShape(PlayerType p){
-		shape = new Ellipse(Controller.TILE_SIZE * 0.3125, Controller.TILE_SIZE * 0.26);
+		shape = new Ellipse(size * 0.3125, size * 0.26);
 
 		shape.setFill(p == PlayerType.BLUE? Color.BLUE:Color.RED);
 
-		shape.setStrokeWidth(Controller.TILE_SIZE * 0.05);
+		shape.setStrokeWidth(size * 0.05);
 		shape.setStroke(Color.BLACK);
 
-		shape.setTranslateX((Controller.TILE_SIZE - Controller.TILE_SIZE * 0.3125 * 2 ) / 2);
-		shape.setTranslateY((Controller.TILE_SIZE - Controller.TILE_SIZE * 0.26 * 2) / 2 + Controller.TILE_SIZE * 0.07);
+		shape.setTranslateX((size - size * 0.3125 * 2 ) / 2);
+		shape.setTranslateY((size - size * 0.26 * 2) / 2 + size * 0.07);
 		getChildren().addAll(shape);
 	}
 
@@ -51,7 +52,7 @@ public class HeroView extends StackPane{
 	public void move(int x, int y){
 		this.x = x;
 		this.y = y;
-		this.relocate(x * Controller.TILE_SIZE , y * Controller.TILE_SIZE );
+		this.relocate(x * size , y * size );
 
 	}
 

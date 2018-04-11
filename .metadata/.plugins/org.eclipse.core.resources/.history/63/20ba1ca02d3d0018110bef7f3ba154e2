@@ -1,0 +1,31 @@
+package gameModel;
+
+public class Ranger extends Hero implements Capture{
+
+	private int move = 1;
+	private int width;
+	private int height;
+
+	public Ranger(int w, int h) {
+		super.setStartX(3);
+		super.setStartY(3);
+		super.setRoleType(RoleType.SUPPORT);
+
+		this.width = w;
+		this.height = h;
+	}
+
+	@Override
+	public void move(int x, int y) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void capture() {
+		// TODO Auto-generated method stub
+
+	}
+
+
+}

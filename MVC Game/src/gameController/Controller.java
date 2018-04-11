@@ -19,11 +19,11 @@ public class Controller {
 	private Board board;
 
 
-	public static final int TILE_SIZE = 50; //This should be in Model package in Board class, - Dario
+	private int TILE_SIZE; //This should be in Model package in Board class, - Dario
 										   //gameView package should have BoardView class instead - Dario
 
-	public static final int WIDTH = 12;   //this too - Dario
-	public static final int HEIGHT = 14;  //this too - Dario
+	private int WIDTH;   //this too - Dario
+	private int HEIGHT;  //this too - Dario
 
 	//private static final int HERO_NUM = 6; //This variable maybe should be in a class of its own (maybe) - Dario
 
@@ -36,14 +36,16 @@ public class Controller {
 
 
 	public Controller(){
-		board = new Board(TILE_SIZE, WIDTH, HEIGHT);
-
+		board = new Board();
+		TILE_SIZE = board.getTileSize();
+		WIDTH = board.getWidth();
+		HEIGHT = board.getHeight();
 		tileArray = new TileView[WIDTH][HEIGHT];
 		heroArray = new ArrayList();
 		tileGroup = createTiles();
 		heroGroup = createHeros();
 
-		gameBoard = new BoardView(board, tileGroup, heroGroup);
+		gameBoard = new BoardView(board.getWidth(), board.getHeight(), board.getTileSize(), tileGroup, heroGroup);
 
 	}
 
@@ -74,48 +76,87 @@ public class Controller {
 	}
 
 
-
 	private Group createHeros(){
 		Group group = new Group();
+		ArrayList<Hero> r = new ArrayList();
+		r.add(new Warrior(WIDTH, HEIGHT, PlayerType.BLUE));
+		r.add(new Warrior(WIDTH, HEIGHT, PlayerType.RED));
 
-		Hero h = new Warrior(WIDTH, HEIGHT);
+		r.add(new Support(WIDTH, HEIGHT, PlayerType.BLUE));
+		r.add(new Support(WIDTH, HEIGHT, PlayerType.RED));
 
-		int x = h.getStartX();
-		int y = h.getStartY();
+		r.add(new Ranger(WIDTH, HEIGHT, PlayerType.BLUE));
+		r.add(new Ranger(WIDTH, HEIGHT, PlayerType.RED));
 
-		HeroView h1 = new HeroView(x, y, PlayerType.BLUE, h.getRoleType());
-		heroArray.add(h1);
-		//tileArray[x][y].setHero(h1);
-
-		h1.setOnMouseClicked(e ->{
-			h.move(h1.getLocX(), h1.getLocY());
-
-			for(int i = 0; i < h.getValidX().length; i++){
-				showValidTiles(tileArray, h.getValidX()[i], h.getValidY()[i]);
-			}
-
-		});
+		for(Hero a : r){
+			HeroView heroView = new HeroView(a.getStartX(), a.getStartY(),a.getPlayerType(), a.getRoleType(), TILE_SIZE);
+			heroArray.add(heroView);
 
 
-		Hero sss = new Support();
 
-		int sx = sss.getStartX();
-		int sy = sss.getStartY();
+			heroView.setOnMouseClicked(e ->{
+				a.move(heroView.getLocX(), heroView.getLocY());
 
-		HeroView h2 = new HeroView(sx, sy, PlayerType.RED, sss.getRoleType());
-		heroArray.add(h2);
-		//tileArray[sx][sy].setHero(h2);
-
-		h2.setOnMouseClicked(e ->{
-			sss.move(h2.getLocX(), h2.getLocY());
-		});
-
-
-		group.getChildren().add(h1);
-		group.getChildren().add(h2);
+				for(int i = 0; i < a.getValidX().length; i++){
+					showValidTiles(tileArray, a.getValidX()[i], a.getValidY()[i]);
+				}
+			});
+			group.getChildren().add(heroView);
+		}
 
 		return group;
 	}
+
+
+
+
+//	private Group createHeros1(){
+//		Group group = new Group();
+//
+//		Hero h = new Warrior(WIDTH, HEIGHT);
+//
+//		int x = h.getStartX();
+//		int y = h.getStartY();
+//
+//		HeroView h1 = new HeroView(x, y, PlayerType.BLUE, h.getRoleType());
+//		heroArray.add(h1);
+//		//tileArray[x][y].setHero(h1);
+//
+//		h1.setOnMouseClicked(e ->{
+//			h.move(h1.getLocX(), h1.getLocY());
+//
+//			for(int i = 0; i < h.getValidX().length; i++){
+//				showValidTiles(tileArray, h.getValidX()[i], h.getValidY()[i]);
+//			}
+//
+//		});
+//
+//
+//		Hero sss = new Support(WIDTH, HEIGHT);
+//
+//		int sx = sss.getStartX();
+//		int sy = sss.getStartY();
+//
+//		HeroView h2 = new HeroView(sx, sy, PlayerType.RED, sss.getRoleType());
+//		heroArray.add(h2);
+//		//tileArray[sx][sy].setHero(h2);
+//
+//		h2.setOnMouseClicked(e ->{
+//			sss.move(h2.getLocX(), h2.getLocY());
+//			for(int i = 0; i < sss.getValidX().length; i++){
+//				showValidTiles(tileArray, sss.getValidX()[i], sss.getValidY()[i]);
+//			}
+//		});
+//
+//
+//		group.getChildren().add(h1);
+//		group.getChildren().add(h2);
+//
+//		return group;
+//	}
+
+
+
 
 	private void showValidTiles(TileView[][] tile, int x, int y){
 		tile[x][y].setFill(Color.GREEN);

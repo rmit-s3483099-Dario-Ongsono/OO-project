@@ -8,18 +8,21 @@ public class BoardView {
 
 	private Group tileGroup;
 	private Group heroGroup;
-	private Board board;
+	private int size;
+	private int width;
+	private int height;
 
-
-	public BoardView(Board board, Group tileGroup, Group heroGroup){
-		this.board = board;
+	public BoardView(int w, int h, int size, Group tileGroup, Group heroGroup){
+		this.width = w;
+		this.height = h;
+		this.size = size;
 		this.tileGroup = tileGroup;
 		this.heroGroup = heroGroup;
 	}
 
 	public Pane displayBoard(){ //This method should be moved into a new 'BoardView' class in View package
 		Pane gameBoard = new Pane();
-		gameBoard.setPrefSize(board.getTileSize() * board.getWidth(), board.getTileSize() * board.getHeight());
+		gameBoard.setPrefSize(size * width, size * height);
 
 		gameBoard.getChildren().addAll(tileGroup, heroGroup);
 		return gameBoard;

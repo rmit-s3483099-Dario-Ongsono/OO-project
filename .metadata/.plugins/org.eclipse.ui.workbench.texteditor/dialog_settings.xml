@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="shape" key="selection"/>
+		<item value="size" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Controller.TILE_SIZE"/>
 			<item value="shape"/>
 			<item value="super.getTile()"/>
 			<item value="Board"/>
@@ -16,6 +17,7 @@
 			<item value="create"/>
 		</list>
 		<list key="replacehistory">
+			<item value="size"/>
 			<item value="tileArray"/>
 			<item value="Controller"/>
 			<item value="super.getTile()"/>

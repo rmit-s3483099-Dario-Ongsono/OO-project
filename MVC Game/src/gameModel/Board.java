@@ -5,10 +5,10 @@ public class Board {
 	private int width;
 	private int height;
 
-	public Board(int tilesize, int width, int height){
-		this.height = height;
-		this.tile_size = tilesize;
-		this.width = width;
+	public Board(){
+		this.height = 14;
+		this.tile_size = 50;
+		this.width = 13;
 	}
 
 	public int getTileSize(){
