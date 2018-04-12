@@ -1,5 +1,14 @@
 package gameModel;
 
+/**
+ *
+ * @author 		Dario
+ * @version		1.2
+ * @since		1.0
+ *
+ * Description:
+ * Board Class only store values for tile size, board width and board height;
+ */
 public class Board {
 	private int tile_size;
 	private int width;

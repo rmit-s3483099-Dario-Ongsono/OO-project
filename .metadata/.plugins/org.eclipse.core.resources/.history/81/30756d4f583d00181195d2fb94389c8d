@@ -1,0 +1,14 @@
+package gameController;
+
+public class TurnChecker {
+	private static int count;
+
+	public TurnChecker(){
+
+	}
+
+	public int getCount(){
+		count += 1;
+		return count;
+	}
+}

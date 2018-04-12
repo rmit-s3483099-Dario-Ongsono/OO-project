@@ -1,7 +1,6 @@
 package gameView;
 
-import gameController.Controller;
-
+import bin.Controller;
 import gameModel.*;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -17,6 +16,8 @@ public class HeroView extends StackPane{
 	private boolean alive;
 	private boolean selected;
 	private int size;
+	private PlayerType p;
+
 	public HeroView(int x, int y, PlayerType p, RoleType r, int size){
 		relocate(x * size, y * size);
 		this.size = size;
@@ -24,16 +25,14 @@ public class HeroView extends StackPane{
 		this.y = y;
 		drawShape(p);
 		this.alive = true;
-
-		this.setOnMousePressed(e ->{
-			shape.setStroke(Color.WHITE);
-			this.selected = true;
-
-		});
+		this.p = p;
 
 	}
 
-
+	public void selecetedChanges(){
+		shape.setStroke(Color.WHITE);
+		this.selected = true;
+	}
 	private void drawShape(PlayerType p){
 		shape = new Ellipse(size * 0.3125, size * 0.26);
 
@@ -47,13 +46,16 @@ public class HeroView extends StackPane{
 		getChildren().addAll(shape);
 	}
 
+	public PlayerType getPlayerType(){
+		return p;
+	}
 
 
 	public void move(int x, int y){
 		this.x = x;
 		this.y = y;
 		this.relocate(x * size , y * size );
-
+		
 	}
 
 	public boolean isSelected(){
