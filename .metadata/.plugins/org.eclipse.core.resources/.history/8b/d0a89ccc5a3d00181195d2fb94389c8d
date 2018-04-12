@@ -1,0 +1,20 @@
+package gameController;
+
+import gameModel.PlayerType;
+
+public class TurnChecker {
+
+	private PlayerType p;
+
+	public TurnChecker(){
+
+	}
+
+	public void setTurn(PlayerType p){
+		this.p = p;
+	}
+
+	public PlayerType isTurn(){
+		return p;
+	}
+}

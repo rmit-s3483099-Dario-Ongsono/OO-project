@@ -1,6 +1,5 @@
 package bin;
 
-import gameController.Controller;
 import gameModel.RoleType;
 import gameView.*;
 import javafx.scene.paint.Color;

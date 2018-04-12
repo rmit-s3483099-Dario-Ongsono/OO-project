@@ -1,0 +1,48 @@
+package gameController;
+
+import java.util.ArrayList;
+
+import gameModel.Board;
+import gameView.BoardView;
+import gameView.HeroView;
+import gameView.TileView;
+import javafx.scene.Group;
+
+public class MainController {
+	private BoardView gameBoard;
+	private Group tileGroup;
+	private Group heroGroup;
+	private TileView[][] tileArray;
+	private ArrayList<HeroView> heroArray;
+	private Board board;
+
+
+	private int TILE_SIZE;
+	private int WIDTH;
+	private int HEIGHT;
+	private TileGenerator tilegenerator;
+	private HeroGenerator heroGenerator;
+
+	public MainController(){
+		board = new Board();
+
+		TILE_SIZE = board.getTileSize();
+		WIDTH = board.getWidth();
+		HEIGHT = board.getHeight();
+
+		tilegenerator = new TileGenerator(WIDTH, HEIGHT, TILE_SIZE);
+		heroGenerator = new HeroGenerator(WIDTH, HEIGHT, TILE_SIZE);
+
+		tileArray = new TileView[WIDTH][HEIGHT];
+		heroArray = new ArrayList();
+
+		tileGroup = tilegenerator.createTiles(heroArray, tileArray);
+		heroGroup = heroGenerator.createHeros(heroArray, tileArray);
+
+		gameBoard = new BoardView(board.getWidth(), board.getHeight(), board.getTileSize(), tileGroup, heroGroup);
+	}
+
+	public BoardView getGameBoard(){
+		return gameBoard;
+	}
+}

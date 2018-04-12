@@ -6,7 +6,7 @@ import javafx.scene.shape.Rectangle;
 
 public class TileView extends Rectangle{
 
-	//private HeroView hero;
+	private HeroView hero;
 	private boolean ready;
 	private int x;
 	private int y;
@@ -21,13 +21,17 @@ public class TileView extends Rectangle{
 	}
 
 
-//	public void setHero(HeroView hero){
-//		this.hero = hero;
-//	}
-//
-//	public boolean hasHero(){
-//		return hero != null;
-//	}
+	public void setHero(HeroView hero){
+		this.hero = hero;
+	}
+
+	public boolean hasHero(){
+		return hero != null;
+	}
+
+	public HeroView getHero(){
+		return hero;
+	}
 
 	public void setReady(boolean ready){
 		this.ready = ready;
@@ -37,13 +41,17 @@ public class TileView extends Rectangle{
 		return ready;
 	}
 
-
-
 	public int getLocX(){
 		return x;
 	}
 	public int getLocY(){
 		return y;
+	}
+	
+	public void changeColor() {
+		this.setFill(Color.GREEN);
+		this.ready = true;
+
 	}
 
 	public void setDefault(){

@@ -1,16 +1,25 @@
 package gameModel;
 
+/**
+ *
+ * @author 		Yu Liu
+ * @version 	1.3
+ * @since 		1.0
+ *
+ * @purpose		an abstract class which implements move interface
+ *
+ * @return
+ */
 public abstract class Hero implements Move{
 	private PlayerType pType;
 	private RoleType rType;
 	private int startX;
 	private int startY;
 
-	protected int[] validX;
-	protected int[] validY;
+	protected int[] validX; //store every number of x of valid tiles to this hero
+	protected int[] validY; //store every number of y of valid tiles to this hero
 
 	public Hero(){
-
 	}
 
 	public int[] getValidX(){

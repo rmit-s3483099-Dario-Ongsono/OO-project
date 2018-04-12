@@ -3,6 +3,10 @@
 >>>>>>>=Stashed changes
 PROBLEMS_FILTERS_MIGRATE=true
 eclipse.preferences.version=1
+<<<<<<< HEAD
 platformState=1469328464206
+=======
+platformState=1521852169729
+>>>>>>> 3cb8d2d57923ced0c9c511d52d575e61183ed954
 quickStart=false
 tipsAndTricks=true
