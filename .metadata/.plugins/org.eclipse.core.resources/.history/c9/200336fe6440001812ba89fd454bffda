@@ -63,7 +63,6 @@ public class HeroController {
 
 		//Adding Hero View
 		//@Ensures("r.contains(a)")
-		//@Ensures("r.contains(OLD a)") //preservation
 		for(Hero a : r){
 			HeroView heroView = new HeroView(a.getStartX(), a.getStartY(),a.getPlayerType(), a.getRoleType(), tilesize);
 			heroArray.add(heroView);
