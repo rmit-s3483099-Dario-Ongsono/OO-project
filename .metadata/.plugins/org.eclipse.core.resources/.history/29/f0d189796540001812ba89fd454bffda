@@ -37,16 +37,16 @@ public class HeroController {
  * Description: DBC
  * 
  */
+	/*@Invariant("r.length <= 9") //the maximum number of heroes in the hero pool is 9 
+	  @Invariant("warrior.length && support.length && ranger.length == 2")
 	
-	/*@Invariant("r.length <= 9") the maximum number of heroes in the hero pool is 9 
-	 *@Invariant("warrior.length && support.length && ranger.length == 2")
-	 *
-	 *Adding a hero on the board
-	 *@Requires("Warrior.length && Support.length && Ranger.length == 2")
-	 *@Requires("PlayerType.BLUE == 3 && PlayerType.RED == 3)
-	 *
-	 *@Ensures("r.length == OLD r.length + 1)
-	 *
+	//Adding a hero on the board
+	  @Requires("Warrior.length && Support.length && Ranger.length == 2")
+	  @Requires("PlayerType.BLUE = 3 && PlayerType.RED == 3)
+	
+	  @Ensures("r.length == OLD r.length + 1)
+	  
+	 
 	 */
 	public Group createHeros(ArrayList<HeroView> heroArray,TileView[][] tileArray){
 		Group group = new Group();
@@ -61,12 +61,9 @@ public class HeroController {
 		r.add(new Ranger(width, height, PlayerType.BLUE));
 		r.add(new Ranger(width, height, PlayerType.RED));
 
-		/*Adding Hero View
-		 * 
-		 *	@Ensures("r.contains(a)")
-		 *	@Ensures("r.contains(OLD a)") //preservation
-		 *
-		 */
+		//Adding Hero View
+		//@Ensures("r.contains(a)")
+		//@Ensures("r.contains(OLD a)") //preservation
 		for(Hero a : r){
 			HeroView heroView = new HeroView(a.getStartX(), a.getStartY(),a.getPlayerType(), a.getRoleType(), tilesize);
 			heroArray.add(heroView);
