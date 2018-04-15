@@ -4,6 +4,12 @@ import gameModel.Board;
 import javafx.scene.Group;
 import javafx.scene.layout.Pane;
 
+/**
+ *
+ * @author Dario
+ *
+ */
+
 // This class should be in Model not View.
 public class BoardView {
 

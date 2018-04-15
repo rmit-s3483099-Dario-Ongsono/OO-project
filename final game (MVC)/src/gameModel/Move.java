@@ -1,6 +1,10 @@
 package gameModel;
 
-
+/**
+ *
+ * @author Tengku Ummil Syazwina Zainab Tengku Shamsulbhari
+ *
+ */
 public interface Move {
 	/**
 	 * interface for move hero

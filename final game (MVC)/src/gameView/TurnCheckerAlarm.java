@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author 		Yu Liu
+ * @author 		Dario
  * @version		1.1
  * @since		1.0
  *

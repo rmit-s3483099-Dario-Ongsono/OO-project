@@ -1,5 +1,10 @@
 package gameModel;
 
+/**
+ *
+ * @author Yu Liu
+ *@version 1.4
+ */
 
 public class Warrior extends Hero implements Capture{
 	private int move = 2;

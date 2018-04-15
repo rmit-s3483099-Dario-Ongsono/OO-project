@@ -5,6 +5,11 @@ import gameModel.RoleType;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
 
+/**
+ *
+ * @author Yu Liu
+ *
+ */
 public class HeroShape {
 
 	private Shape shape;

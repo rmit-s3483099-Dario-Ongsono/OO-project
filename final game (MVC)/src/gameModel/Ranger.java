@@ -1,5 +1,11 @@
 package gameModel;
 
+/**
+ *
+ * @author Tengku Ummil Syazwina Zainab Tengku Shamsulbhari
+ * @version 1.4
+ */
+
 public class Ranger extends Hero implements Capture{
 
 	private int move = 1;

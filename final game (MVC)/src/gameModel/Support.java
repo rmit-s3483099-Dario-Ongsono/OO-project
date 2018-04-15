@@ -1,5 +1,11 @@
 package gameModel;
 
+
+/**
+ *
+ * @author Yu Liu
+ * @version 1.5
+ */
 public class Support extends Hero implements Revive{
 	private int move = 1;
 	private int width;

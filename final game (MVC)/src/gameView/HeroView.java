@@ -7,6 +7,11 @@ import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Shape;
 
+/**
+ *
+ * @author Yu Liu
+ *
+ */
 public class HeroView extends StackPane{
 	private Shape shape;
 

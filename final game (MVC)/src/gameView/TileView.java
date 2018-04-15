@@ -1,9 +1,14 @@
 package gameView;
-
 import gameModel.Tile;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
+
+/**
+ *
+ * @author Jie Yi
+ *
+ */
 public class TileView extends Rectangle{
 
 	private HeroView hero;
@@ -27,13 +32,13 @@ public class TileView extends Rectangle{
 	}
 
 	/**
-	 * set the hero to the view 
+	 * set the hero to the view
 	 * @Requires ("hero != null")
 	 */
 	public void setHero(HeroView hero){
 		this.hero = hero;
 	}
-	
+
 	public boolean hasHero(){
 		return hero != null;
 	}

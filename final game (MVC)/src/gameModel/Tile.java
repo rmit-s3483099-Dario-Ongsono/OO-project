@@ -1,5 +1,11 @@
 package gameModel;
 
+
+/**
+ *
+ * @author Tengku Ummil Syazwina Zainab Tengku Shamsulbhari
+ *
+ */
 public class Tile {
 
 	private int sideSize;
