@@ -33,36 +33,55 @@ public class TileView extends Rectangle{
 	public void setHero(HeroView hero){
 		this.hero = hero;
 	}
-
+	
 	public boolean hasHero(){
 		return hero != null;
 	}
-
+	/**
+	 * return the hero in the view
+	 * @Ensures ("hero ! = null")
+	 */
 	public HeroView getHero(){
 		return hero;
 	}
-
+	/**
+	 * set the tile view to a different color
+	 * @Requires ("ready == true || ready == false")
+	 */
 	public void setReady(boolean ready){
 		this.ready = ready;
 	}
-
+	/**
+	 * return the tile is ready or not
+	 * @Ensures ("ready == true || ready == false")
+	 */
 	public boolean isReady(){
 		return ready;
 	}
-
+	/**
+	 * return the current location
+	 * @Ensures ("x>=0")
+	 */
 	public int getLocX(){
 		return x;
 	}
+	/**
+	 * return the current location
+	 * @Ensures ("y>=0")
+	 */
 	public int getLocY(){
 		return y;
 	}
-	
+	/**
+	 * void method to change the color
+	 */
 	public void changeColor() {
 		this.setFill(Color.GREEN);
 		this.ready = true;
-
 	}
-
+	/**
+	 * void method to set default color
+	 */
 	public void setDefault(){
 		this.setFill(Color.valueOf("#feb"));
 		this.ready = false;
