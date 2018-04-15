@@ -18,11 +18,11 @@ public class HeroView extends StackPane{
 	private PlayerType p;
 	/**
 	 * initial hero view with the parameters x, y, p, r, s, size
-	 * @Requires ("x>=0")
-	 * @Requires ("y>=0")
+	 * @Requires ("x == 13")
+	 * @Requires ("y == 14")
 	 * @Requires ("p == RED || p == BLUE")
 	 * @Requires ("r == WARRIOR || r == RANGER || r == SUPPOER")
-	 * @Requires ("size>=0")
+	 * @Requires ("size == 50")
 	 */
 	public HeroView(int x, int y, PlayerType p, RoleType r, int size){
 		relocate(x * size, y * size);
@@ -65,8 +65,8 @@ public class HeroView extends StackPane{
 
 	/**
 	 * move hero and relocate it
-	 * @Requires ("x>=0")
-	 * @Requires ("y>+0")
+	 * @Requires ("x>=0","x<=14")
+	 * @Requires ("y>=0","y<=13")
 	 */
 	public void move(int x, int y){
 		this.x = x;
@@ -105,14 +105,14 @@ public class HeroView extends StackPane{
 	}
 	/**
 	 * return the integer that for current location
-	 * @Ensures ("x>=0")
+	 * @Ensures ("x>=0","x<=14")
 	 */
 	public int getLocX(){
 		return x;
 	}
 	/**
 	 * return the integer that for current location
-	 * @Ensures ("y>=0")
+	 * @Ensures ("y>=0","y<=13")
 	 */
 	public int getLocY(){
 		return y;

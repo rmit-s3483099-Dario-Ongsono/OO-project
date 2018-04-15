@@ -14,9 +14,9 @@ public class BoardView {
 	private int height;
 	/**
 	 * Constructor for initial Board View with 5 parameters x, h, size, tileGroup, heroGroup
-	 * @Requires ("x>=0")
-	 * @Requires ("h>=0")
-	 * @Requires ("size>=0")
+	 * @Requires ("x == 13")
+	 * @Requires ("h == 14")
+	 * @Requires ("size == 50")
 	 * @Requires ("tileGroup != null")
 	 * @Requires ("heroGroup != null")
 	 */

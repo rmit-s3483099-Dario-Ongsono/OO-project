@@ -12,9 +12,9 @@ public class TileView extends Rectangle{
 	private int y;
 	/**
 	 * constructor for initial the tile view with 3 parameters x, y, tileSize
-	 * @Requires ("x>=0")
-	 * @Requires ("h>=0")
-	 * @Requires ("tileSize>=0")
+	 * @Requires ("x == 13")
+	 * @Requires ("y == 14")
+	 * @Requires ("tileSize == 50")
 	 */
 	public TileView(int x, int y, int tileSize){
 		super(tileSize, tileSize);
@@ -60,14 +60,14 @@ public class TileView extends Rectangle{
 	}
 	/**
 	 * return the current location
-	 * @Ensures ("x>=0")
+	 * @Ensures ("x>=0","x<=14")
 	 */
 	public int getLocX(){
 		return x;
 	}
 	/**
 	 * return the current location
-	 * @Ensures ("y>=0")
+	 * @Ensures ("y>=0","y<=13")
 	 */
 	public int getLocY(){
 		return y;
