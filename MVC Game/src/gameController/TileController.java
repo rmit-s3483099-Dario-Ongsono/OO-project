@@ -24,9 +24,9 @@ public class TileController {
 
 	/**
 	 * constructor that to store new object with width, height, size three parameters
-	 * @Requires ("width>=0")
-	 * @Requires ("height>=0")
-	 * @Requires ("size>=0")
+	 * @Requires ("width == 13")
+	 * @Requires ("height == 14")
+	 * @Requires ("size == 50")
 	 */
 	public TileController(int width, int height, int size){
 		this.boardWidth = width;
