@@ -9,7 +9,6 @@ import gameView.TileView;
 import javafx.scene.Group;
 
 /**
- *
  * @author 		Dario
  * @version		1.5
  * @since		1.0
@@ -36,7 +35,13 @@ public class MainController {
 
 	private TileController tileController;
 	private HeroController heroController;
+	
 
+	/**
+	 * initial controller
+	 * @Requires ("board")
+	 * @Requires ("TILE_SIZE>0", "WIDTH>0", "HIGHT>0")
+	 */
 	public MainController(){
 		board = new Board(); //instantiate board first in order to get value of tile size, board width and board height
 
@@ -55,7 +60,11 @@ public class MainController {
 
 		gameBoard = new BoardView(board.getWidth(), board.getHeight(), board.getTileSize(), tileGroup, heroGroup);
 	}
-
+	
+	/**
+	 * return the gameBoard when the parameters changed
+	 * @Ensures ("gameBoard != null")
+	 */
 	public BoardView getGameBoard(){
 		return gameBoard;
 	}

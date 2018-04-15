@@ -22,14 +22,24 @@ public class TileController {
 	private int boardHeight;
 	private int tileSize;
 
-
+	/**
+	 * constructor that to store new object with width, height, size three parameters
+	 * @Requires ("width>=0")
+	 * @Requires ("height>=0")
+	 * @Requires ("size>=0")
+	 */
 	public TileController(int width, int height, int size){
 		this.boardWidth = width;
 		this.boardHeight = height;
 		this.tileSize = size;
 	}
 
-
+	/**
+	 * create the tiles group when receive the heroArray, tileArray two parameters
+	 * @Requires ("heroArray != null")
+	 * @Requires ("tileArray != null")
+	 * @Ensure ("group !=null")
+	 */
 	public Group createTiles(ArrayList<HeroView> heroArray, TileView[][] tileArray){
 		Group group = new Group();
 		for(int x = 0; x < boardWidth; x++){
@@ -57,7 +67,11 @@ public class TileController {
 		}
 		return group;
 	}
-
+	/**
+	 * private method that clean the highlight tiles when finish hero's action
+	 * @Requires ("heroArray != null")
+	 * @Requires ("tileArray != null")
+	 */
 	private void clean(ArrayList<HeroView> heroArray, TileView[][] tileArray){
 		for(int x = 0; x < boardWidth; x++){
 			for(int y = 0; y < boardHeight; y++){
