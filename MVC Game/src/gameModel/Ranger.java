@@ -17,6 +17,7 @@ public class Ranger extends Hero implements Capture{
 	}
 
 	@Override
+
 	public void move(int curX, int curY) {
 		super.validX = new int[4];
 		super.validY = new int[4];
