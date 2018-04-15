@@ -31,6 +31,21 @@ public class HeroController {
 		this.tilesize = tilesize;
 
 	}
+/**
+ * @author Tengku Ummil Syazwina Zainab
+ * 
+ * Description: DBC
+ * 
+ */
+	/*@Invariant("r.length <= 9") //the maximum number of heroes in the hero pool is 9 
+	//@Invariant("warrior.length && support.length && ranger.length == 2")
+	
+	//Adding a hero on the board
+	//@Requires("Warrior.length && Support.length && Ranger.length == 2")
+	//@Requires("PlayerType.BLUE = 3 && PlayerType.RED == 3)
+	// 
+	 
+	 */
 	public Group createHeros(ArrayList<HeroView> heroArray,TileView[][] tileArray){
 		Group group = new Group();
 		ArrayList<Hero> r = new ArrayList<Hero>();
@@ -63,6 +78,8 @@ public class HeroController {
 						selected = true;
 				}
 
+				
+				//move only if the tile selected is valid
 				if(!selected && t.isTurn() && a.getPlayerType() == PlayerType.RED){
 
 					heroView.selecetedChanges();
@@ -73,6 +90,8 @@ public class HeroController {
 					}
 				}
 
+				//@Requires(a.move(heroView.getLocX(), heroView.getLocY() == isEmpty())
+				//move only if the tile selected is valid
 				if(!selected && !t.isTurn() && a.getPlayerType() == PlayerType.BLUE){
 					heroView.selecetedChanges();
 					a.move(heroView.getLocX(), heroView.getLocY());
