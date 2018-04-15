@@ -22,7 +22,9 @@ import javafx.stage.Stage;
 
 public class TurnCheckerAlarm {
 
-
+	/**
+	 * create an alarm when the rules is triggered
+	 */
 	public static void display(){
 		Stage windows = new Stage();
 
