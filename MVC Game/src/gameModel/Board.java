@@ -22,21 +22,21 @@ public class Board {
 	}
 	/**
 	 * Return the integer of tile size
-	 * @Ensures ("tile_size >=0")
+	 * @Ensures ("tile_size == 50")
 	 */
 	public int getTileSize(){
 		return tile_size;
 	}
 	/**
 	 * Return the integer of width
-	 * @Ensures ("width >=0")
+	 * @Ensures ("width == 13")
 	 */
 	public int getWidth(){
 		return width;
 	}
 	/**
 	 * Return the integer of height
-	 * @Ensures ("height >=0")
+	 * @Ensures ("height == 14")
 	 */
 	public int getHeight(){
 		return height;

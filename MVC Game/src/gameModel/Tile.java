@@ -6,14 +6,14 @@ public class Tile {
 
 	/**
 	 * initial tile with the input size
-	 * @Requires ("size>=0")
+	 * @Requires ("size == 50")
 	 */
 	public Tile(int size){
 		this.sideSize = size;
 	}
 	/**
 	 * return the tile size when other needs
-	 * @Ensures ("sideSize >= 0")
+	 * @Ensures ("sideSize == 50")
 	 */
 	public int getSideSize(){
 		return sideSize;

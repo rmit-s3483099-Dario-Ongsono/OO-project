@@ -51,14 +51,14 @@ public abstract class Hero implements Move{
 	}
 	/**
 	 * set the start location in X
-	 * @Requires ("startX>=0")
+	 * @Requires ("startX>=0"，"startX<=0")
 	 */
 	public void setStartX(int startX) {
 		this.startX = startX;
 	}
 	/**
 	 * set the start location in Y
-	 * @Requires ("startY>=0")
+	 * @Requires ("startY>=0","startY<=0")
 	 */
 	public void setStartY(int startY) {
 		this.startY = startY;
@@ -79,14 +79,14 @@ public abstract class Hero implements Move{
 	}
 	/**
 	 * return the start location in X
-	 * @Ensures ("startX>=0")
+	 * @Ensures ("startX>=0", "startX<=0")
 	 */
 	public int getStartX(){
 		return startX;
 	}
 	/**
 	 * return the start location in Y
-	 * @Ensures ("startY>=0")
+	 * @Ensures ("startY>=0","startY<=0")
 	 */
 	public int getStartY(){
 		return startY;
